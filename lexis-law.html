@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>LEXIS — Achievement Card 1080×1080</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1080px;
+    overflow: hidden;
+    background: #F8F6F0;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+
+  .canvas {
+    width: 1080px;
+    height: 1080px;
+    position: relative;
+    background: #F8F6F0;
+  }
+
+  /* 背景装飾 */
+  .bg-texture {
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 79px,
+        rgba(27, 42, 74, 0.04) 80px
+      );
+  }
+
+  /* 左上ゴールドアクセント */
+  .accent-corner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 280px;
+    background: linear-gradient(135deg, rgba(201,168,76,0.15) 0%, transparent 60%);
+  }
+
+  /* 右下ネイビーグロー */
+  .navy-corner {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 320px;
+    height: 320px;
+    background: linear-gradient(315deg, rgba(27,42,74,0.08) 0%, transparent 60%);
+  }
+
+  /* 上部ゴールドライン */
+  .gold-line-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #C9A84C 0%, #D9BC72 50%, transparent 100%);
+  }
+
+  /* 左端ネイビーバー */
+  .navy-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background: #1B2A4A;
+  }
+
+  /* メインコンテンツ */
+  .main {
+    position: absolute;
+    inset: 0;
+    padding: 64px 72px 64px 88px;
+    display: flex;
+    flex-direction: column;
+    z-index: 5;
+  }
+
+  /* ヘッダー部 */
+  .card-header {
+    margin-bottom: 40px;
+  }
+
+  .category-label {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    color: #C9A84C;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .category-label::before {
+    content: '';
+    display: inline-block;
+    width: 32px;
+    height: 1px;
+    background: #C9A84C;
+  }
+
+  .theme-name {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 88px;
+    font-weight: 700;
+    color: #1B2A4A;
+    letter-spacing: 0.06em;
+    line-height: 0.88;
+    margin-bottom: 16px;
+  }
+
+  .theme-tagline {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    color: #5C6B7A;
+    letter-spacing: 0.06em;
+    line-height: 1.7;
+  }
+
+  /* ゴールド区切り線 */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 32px 0;
+  }
+
+  .divider-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, #C9A84C, rgba(201,168,76,0.2));
+  }
+
+  .divider-diamond {
+    width: 6px;
+    height: 6px;
+    background: #C9A84C;
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+
+  /* 主要機能3点 */
+  .features {
+    margin-bottom: 36px;
+  }
+
+  .features-title {
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 0.35em;
+    color: #8A97A5;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .feature-num {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #C9A84C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 12px;
+    color: #C9A84C;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .feature-text { flex: 1; }
+
+  .feature-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1B2A4A;
+    margin-bottom: 4px;
+    letter-spacing: 0.03em;
+  }
+
+  .feature-desc {
+    font-size: 12px;
+    font-weight: 300;
+    color: #5C6B7A;
+    line-height: 1.7;
+  }
+
+  /* カラーパレット */
+  .palette-section {
+    margin-top: auto;
+  }
+
+  .palette-title {
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 0.35em;
+    color: #8A97A5;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .palette-row {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .palette-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .palette-swatch {
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(27,42,74,0.15);
+  }
+
+  .palette-info { display: flex; flex-direction: column; }
+
+  .palette-name {
+    font-size: 11px;
+    font-weight: 300;
+    color: #1B2A4A;
+    letter-spacing: 0.04em;
+  }
+
+  .palette-hex {
+    font-size: 10px;
+    font-weight: 300;
+    color: #8A97A5;
+    letter-spacing: 0.06em;
+  }
+
+  /* フッター */
+  .card-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    border-top: 1px solid rgba(27,42,74,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 88px 0 88px;
+    z-index: 10;
+  }
+
+  .footer-label {
+    font-size: 10px;
+    font-weight: 300;
+    color: #8A97A5;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .footer-badge {
+    display: flex;
+    gap: 8px;
+  }
+
+  .f-badge {
+    font-size: 9px;
+    font-weight: 300;
+    color: #C9A84C;
+    padding: 3px 12px;
+    border: 1px solid rgba(201,168,76,0.4);
+    letter-spacing: 0.12em;
+  }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="bg-texture"></div>
+  <div class="accent-corner"></div>
+  <div class="navy-corner"></div>
+  <div class="gold-line-top"></div>
+  <div class="navy-bar"></div>
+
+  <div class="main">
+    <div class="card-header">
+      <div class="category-label">Legal / Professional Services</div>
+      <div class="theme-name">LEXIS</div>
+      <div class="theme-tagline">士業事務所の「信頼と格式」を<br>デザインで体現するWordPressテーマ</div>
+    </div>
+
+    <div class="divider">
+      <div class="divider-line"></div>
+      <div class="divider-diamond"></div>
+    </div>
+
+    <div class="features">
+      <div class="features-title">Key Features</div>
+      <div class="feature-list">
+        <div class="feature-item">
+          <div class="feature-num">01</div>
+          <div class="feature-text">
+            <div class="feature-title">明朝体 × ネイビー × ゴールドの格調デザイン</div>
+            <div class="feature-desc">Noto Serif JP × Navy #1B2A4A × Gold #C9A84Cで、弁護士・税理士・社労士に求められる「信頼感」を正確に表現。AI生成では出せない品格。</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-num">02</div>
+          <div class="feature-text">
+            <div class="feature-title">10ページ完成品・士業専用コンテンツ構成</div>
+            <div class="feature-desc">弁護士紹介・業務内容・料金・FAQ・ご利用者の声・ブログ・お問い合わせ等、士業サイトに必要な全ページを完備。</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-num">03</div>
+          <div class="feature-text">
+            <div class="feature-title">CSS変数1行でブランドカラー変更可</div>
+            <div class="feature-desc">`:root`変数を変更するだけで事務所カラーに対応。ロゴ・事務所名はCMSで更新可能。カスタマイズ容易な設計。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider">
+      <div class="divider-line"></div>
+      <div class="divider-diamond"></div>
+    </div>
+
+    <div class="palette-section">
+      <div class="palette-title">Color Palette</div>
+      <div class="palette-row">
+        <div class="palette-item">
+          <div class="palette-swatch" style="background:#1B2A4A;"></div>
+          <div class="palette-info">
+            <div class="palette-name">Deep Navy</div>
+            <div class="palette-hex">#1B2A4A</div>
+          </div>
+        </div>
+        <div class="palette-item">
+          <div class="palette-swatch" style="background:#F8F6F0;border:1px solid #DDE3EA;"></div>
+          <div class="palette-info">
+            <div class="palette-name">Off White</div>
+            <div class="palette-hex">#F8F6F0</div>
+          </div>
+        </div>
+        <div class="palette-item">
+          <div class="palette-swatch" style="background:#C9A84C;"></div>
+          <div class="palette-info">
+            <div class="palette-name">Prestige Gold</div>
+            <div class="palette-hex">#C9A84C</div>
+          </div>
+        </div>
+        <div class="palette-item">
+          <div class="palette-swatch" style="background:#5C6B7A;"></div>
+          <div class="palette-info">
+            <div class="palette-name">Slate Gray</div>
+            <div class="palette-hex">#5C6B7A</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-footer">
+    <div class="footer-label">WordPress Theme · v1.0 · 2026</div>
+    <div class="footer-badge">
+      <div class="f-badge">10 Pages</div>
+      <div class="f-badge">Responsive</div>
+      <div class="f-badge">WordPress</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>CLINIQUE BLANC — Achievement Card 1080×1080</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1080px;
+    overflow: hidden;
+    background: #FAFCFC;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+
+  .canvas {
+    width: 1080px;
+    height: 1080px;
+    position: relative;
+    background: #FAFCFC;
+  }
+
+  /* 背景装飾 - 医療の清潔感 */
+  .bg-cross-pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(61,140,133,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(61,140,133,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  /* 右上ティールグラデーション */
+  .teal-gradient {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 360px;
+    height: 360px;
+    background: radial-gradient(ellipse at top right, rgba(61,140,133,0.1) 0%, transparent 65%);
+  }
+
+  /* 上部ティールライン */
+  .teal-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #3D8C85;
+  }
+
+  /* 左端ホワイトスペース（意図的な余白） */
+  .left-accent {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background: linear-gradient(180deg, #3D8C85 0%, #2D4A4A 100%);
+  }
+
+  /* 医療十字マーク */
+  .medical-cross {
+    position: absolute;
+    top: 52px;
+    right: 72px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.15;
+  }
+  .medical-cross::before,
+  .medical-cross::after {
+    content: '';
+    position: absolute;
+    background: #3D8C85;
+    border-radius: 2px;
+  }
+  .medical-cross::before {
+    width: 32px; height: 10px;
+    top: 11px; left: 0;
+  }
+  .medical-cross::after {
+    width: 10px; height: 32px;
+    top: 0; left: 11px;
+  }
+
+  /* メインコンテンツ */
+  .main {
+    position: absolute;
+    inset: 0;
+    padding: 64px 72px 64px 88px;
+    display: flex;
+    flex-direction: column;
+    z-index: 5;
+  }
+
+  /* ヘッダー部 */
+  .card-header {
+    margin-bottom: 36px;
+  }
+
+  .category-label {
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 0.5em;
+    color: #3D8C85;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .category-label::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    background: #3D8C85;
+  }
+
+  .theme-name {
+    font-size: 80px;
+    font-weight: 300;
+    color: #1A2D2D;
+    letter-spacing: 0.08em;
+    line-height: 0.9;
+    margin-bottom: 8px;
+  }
+
+  .theme-name span {
+    font-weight: 500;
+    color: #3D8C85;
+  }
+
+  .theme-tagline {
+    font-size: 14px;
+    font-weight: 300;
+    color: #4A5568;
+    letter-spacing: 0.06em;
+    line-height: 1.8;
+    margin-top: 16px;
+  }
+
+  /* 区切り線 */
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, #3D8C85 0%, rgba(61,140,133,0.1) 100%);
+    margin: 28px 0;
+  }
+
+  /* 主要機能 */
+  .features {
+    margin-bottom: 32px;
+  }
+
+  .features-title {
+    font-size: 9px;
+    font-weight: 300;
+    letter-spacing: 0.45em;
+    color: #718096;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+
+  .feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 14px 16px;
+    background: rgba(61,140,133,0.04);
+    border-left: 2px solid #3D8C85;
+  }
+
+  .feature-text { flex: 1; }
+
+  .feature-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: #1A2D2D;
+    margin-bottom: 3px;
+    letter-spacing: 0.02em;
+  }
+
+  .feature-desc {
+    font-size: 11px;
+    font-weight: 300;
+    color: #4A5568;
+    line-height: 1.7;
+  }
+
+  /* カラーパレット */
+  .palette-section {
+    margin-top: auto;
+  }
+
+  .palette-title {
+    font-size: 9px;
+    font-weight: 300;
+    letter-spacing: 0.45em;
+    color: #718096;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .palette-row {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .palette-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .palette-swatch {
+    width: 36px;
+    height: 36px;
+    border-radius: 4px;
+    border: 1px solid rgba(61,140,133,0.2);
+  }
+
+  .palette-info { display: flex; flex-direction: column; }
+
+  .palette-name {
+    font-size: 11px;
+    font-weight: 300;
+    color: #1A2D2D;
+    letter-spacing: 0.04em;
+  }
+
+  .palette-hex {
+    font-size: 10px;
+    font-weight: 300;
+    color: #718096;
+    letter-spacing: 0.06em;
+  }
+
+  /* フッター */
+  .card-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    border-top: 1px solid rgba(61,140,133,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 88px 0 88px;
+    z-index: 10;
+    background: rgba(240,247,247,0.5);
+  }
+
+  .footer-label {
+    font-size: 10px;
+    font-weight: 300;
+    color: #718096;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .footer-badge {
+    display: flex;
+    gap: 8px;
+  }
+
+  .f-badge {
+    font-size: 9px;
+    font-weight: 300;
+    color: #3D8C85;
+    padding: 3px 12px;
+    border: 1px solid rgba(61,140,133,0.3);
+    border-radius: 9999px;
+    letter-spacing: 0.12em;
+  }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="bg-cross-pattern"></div>
+  <div class="teal-gradient"></div>
+  <div class="teal-line"></div>
+  <div class="left-accent"></div>
+  <div class="medical-cross"></div>
+
+  <div class="main">
+    <div class="card-header">
+      <div class="category-label">Dental / Medical Clinic</div>
+      <div class="theme-name">CLINIQUE<br><span>BLANC</span></div>
+      <div class="theme-tagline">清潔感と信頼を両立した、<br>歯科・クリニック専用WordPressテーマ</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="features">
+      <div class="features-title">Key Features</div>
+      <div class="feature-list">
+        <div class="feature-item">
+          <div class="feature-text">
+            <div class="feature-title">Pure White × Teal Mint × Slate の医療配色</div>
+            <div class="feature-desc">Pure White #FAFCFC × Teal #3D8C85 × Slate #2D4A4Aで、清潔感と専門性を同時に表現。Noto Sans JPゴシック統一で読みやすさを最優先。</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-text">
+            <div class="feature-title">歯科・クリニック特化の5ページ構成</div>
+            <div class="feature-desc">トップ・診療内容・スタッフ紹介・アクセス・お問い合わせが完成。初診の不安を和らげる温かみのある情報設計。</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-text">
+            <div class="feature-title">スタッフ紹介・診療案内コンポーネント完備</div>
+            <div class="feature-desc">医師・スタッフのプロフィールカード、診療科目の視覚的アイコン表示など、医療サイトに必要な要素をすぐに使えるかたちで提供。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="palette-section">
+      <div class="palette-title">Color Palette</div>
+      <div class="palette-row">
+        <div class="palette-item">
+          <div class="palette-swatch" style="background:#FAFCFC;border:1px solid #D1E8E7;"></div>
+          <div class="palette-info">
+            <div class="palette-name">Pure White</div>
+            <div class="palette-hex">#FAFCFC</div>
+          </div>
+        </div>
+        <div class="palette-item">
+          <div class="palette-swatch" style="background:#3D8C85;"></div>
+          <div class="palette-info">
+            <div class="palette-name">Teal Mint</div>
+            <div class="palette-hex">#3D8C85</div>
+          </div>
+        </div>
+        <div class="palette-item">
+          <div class="palette-swatch" style="background:#2D4A4A;"></div>
+          <div class="palette-info">
+            <div class="palette-name">Deep Slate</div>
+            <div class="palette-hex">#2D4A4A</div>
+          </div>
+        </div>
+        <div class="palette-item">
+          <div class="palette-swatch" style="background:#F0F7F7;border:1px solid #D1E8E7;"></div>
+          <div class="palette-info">
+            <div class="palette-name">Mint Pale</div>
+            <div class="palette-hex">#F0F7F7</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-footer">
+    <div class="footer-label">WordPress Theme · v1.0 · 2026</div>
+    <div class="footer-badge">
+      <div class="f-badge">5 Pages</div>
+      <div class="f-badge">Responsive</div>
+      <div class="f-badge">WordPress</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

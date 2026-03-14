@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>POUR OVER — Achievement Card 1080×1080</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1080px;
+    overflow: hidden;
+    background: #F5EFE0;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+
+  .canvas {
+    width: 1080px;
+    height: 1080px;
+    position: relative;
+    background: #F5EFE0;
+  }
+
+  /* 背景装飾 - 珈琲染みのような有機的テクスチャ */
+  .bg-circle-1 {
+    position: absolute;
+    top: -120px;
+    right: -80px;
+    width: 460px;
+    height: 460px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(44,26,14,0.06) 0%, transparent 65%);
+  }
+
+  .bg-circle-2 {
+    position: absolute;
+    bottom: -100px;
+    left: -60px;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(192,99,58,0.08) 0%, transparent 65%);
+  }
+
+  /* 上部ダークバー */
+  .espresso-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #2C1A0E;
+  }
+
+  /* 左端テラコッタアクセント */
+  .terracotta-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background: linear-gradient(180deg, #C0633A 0%, #2C1A0E 100%);
+  }
+
+  /* メインコンテンツ */
+  .main {
+    position: absolute;
+    inset: 0;
+    padding: 64px 72px 64px 88px;
+    display: flex;
+    flex-direction: column;
+    z-index: 5;
+  }
+
+  /* ヘッダー部 */
+  .card-header {
+    margin-bottom: 36px;
+  }
+
+  .category-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    color: #C0633A;
+    margin-bottom: 12px;
+  }
+
+  .theme-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 82px;
+    font-weight: 600;
+    color: #2C1A0E;
+    letter-spacing: 0.06em;
+    line-height: 0.88;
+    margin-bottom: 10px;
+  }
+
+  .theme-name-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 400;
+    font-style: italic;
+    color: #C0633A;
+    letter-spacing: 0.12em;
+    margin-bottom: 16px;
+  }
+
+  .theme-tagline {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: #5C3D28;
+    letter-spacing: 0.06em;
+    line-height: 1.8;
+  }
+
+  /* 区切り線 */
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, #C0633A 0%, rgba(192,99,58,0.15) 100%);
+    margin: 28px 0;
+  }
+
+  /* 主要機能 */
+  .features {
+    margin-bottom: 32px;
+  }
+
+  .features-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    color: #8A7265;
+    margin-bottom: 18px;
+  }
+
+  .feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .feature-dot {
+    width: 8px;
+    height: 8px;
+    background: #C0633A;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+
+  .feature-text { flex: 1; }
+
+  .feature-title {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #2C1A0E;
+    margin-bottom: 3px;
+    letter-spacing: 0.02em;
+  }
+
+  .feature-desc {
+    font-size: 12px;
+    font-weight: 300;
+    color: #5C3D28;
+    line-height: 1.7;
+  }
+
+  /* カラーパレット */
+  .palette-section {
+    margin-top: auto;
+  }
+
+  .palette-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    color: #8A7265;
+    margin-bottom: 14px;
+  }
+
+  .palette-row {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .palette-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .palette-swatch {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(44,26,14,0.1);
+  }
+
+  .palette-info { display: flex; flex-direction: column; }
+
+  .palette-name {
+    font-size: 11px;
+    font-weight: 300;
+    color: #2C1A0E;
+    letter-spacing: 0.04em;
+  }
+
+  .palette-hex {
+    font-size: 10px;
+    font-weight: 300;
+    color: #8A7265;
+    letter-spacing: 0.06em;
+  }
+
+  /* フッター */
+  .card-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    border-top: 1px solid rgba(44,26,14,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 88px 0 88px;
+    z-index: 10;
+  }
+
+  .footer-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 11px;
+    color: #8A7265;
+    letter-spacing: 0.15em;
+  }
+
+  .footer-badge {
+    display: flex;
+    gap: 8px;
+  }
+
+  .f-badge {
+    font-size: 9px;
+    font-weight: 300;
+    color: #C0633A;
+    padding: 3px 12px;
+    border: 1px solid rgba(192,99,58,0.35);
+    border-radius: 20px;
+    letter-spacing: 0.12em;
+  }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="bg-circle-1"></div>
+  <div class="bg-circle-2"></div>
+  <div class="espresso-bar"></div>
+  <div class="terracotta-bar"></div>
+
+  <div class="main">
+    <div class="card-header">
+      <div class="category-label">Café / Coffee Stand</div>
+      <div class="theme-name">POUR</div>
+      <div class="theme-name-sub">OVER</div>
+      <div class="theme-tagline">コーヒーの温度を宿したデザインで、<br>お客様を店へ引き寄せるWordPressテーマ</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="features">
+      <div class="features-title">Key Features</div>
+      <div class="feature-list">
+        <div class="feature-item">
+          <div class="feature-dot"></div>
+          <div class="feature-text">
+            <div class="feature-title">クリーム × エスプレッソ × テラコッタの温感パレット</div>
+            <div class="feature-desc">Warm Cream #F5EFE0 × Deep Espresso #2C1A0E × Terracotta #C0633Aで、カフェの「居心地の良さ」を視覚的に体現。フォントはCormorant Garamondで優雅さを演出。</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-dot"></div>
+          <div class="feature-text">
+            <div class="feature-title">カフェ特化の4ページ構成・メニュー表現に特化</div>
+            <div class="feature-desc">トップ・メニュー・ストーリー・アクセスの4ページが完成。コーヒーメニューをカード形式で魅力的に表示できるコンポーネント設計。</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-dot"></div>
+          <div class="feature-text">
+            <div class="feature-title">Instagramとの親和性・写真映えレイアウト</div>
+            <div class="feature-desc">余白を活かしたミニマルな構成で、コーヒー・フード写真の存在感を最大化。SNSで話題になる「見せる」デザイン。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="palette-section">
+      <div class="palette-title">Color Palette</div>
+      <div class="palette-row">
+        <div class="palette-item">
+          <div class="palette-swatch" style="background:#F5EFE0;"></div>
+          <div class="palette-info">
+            <div class="palette-name">Warm Cream</div>
+            <div class="palette-hex">#F5EFE0</div>
+          </div>
+        </div>
+        <div class="palette-item">
+          <div class="palette-swatch" style="background:#2C1A0E;"></div>
+          <div class="palette-info">
+            <div class="palette-name">Deep Espresso</div>
+            <div class="palette-hex">#2C1A0E</div>
+          </div>
+        </div>
+        <div class="palette-item">
+          <div class="palette-swatch" style="background:#C0633A;"></div>
+          <div class="palette-info">
+            <div class="palette-name">Terracotta</div>
+            <div class="palette-hex">#C0633A</div>
+          </div>
+        </div>
+        <div class="palette-item">
+          <div class="palette-swatch" style="background:#8A7265;"></div>
+          <div class="palette-info">
+            <div class="palette-name">Mocha Mute</div>
+            <div class="palette-hex">#8A7265</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-footer">
+    <div class="footer-label">WordPress Theme · v1.0 · 2026</div>
+    <div class="footer-badge">
+      <div class="f-badge">4 Pages</div>
+      <div class="f-badge">Responsive</div>
+      <div class="f-badge">WordPress</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

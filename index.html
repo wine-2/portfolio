@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Helvetica Neue', sans-serif; background: #f8f8f8; color: #333; }
+  header { background: #fff; padding: 48px 40px 32px; border-bottom: 1px solid #e8e8e8; }
+  header h1 { font-size: 24px; font-weight: 600; letter-spacing: 0.05em; }
+  header p { margin-top: 8px; font-size: 14px; color: #888; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; padding: 48px 40px; max-width: 1200px; margin: 0 auto; }
+  .card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.06); transition: transform 0.2s, box-shadow 0.2s; }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(0,0,0,0.10); }
+  .card iframe { width: 100%; height: 220px; border: none; display: block; }
+  .card-body { padding: 20px 24px 24px; }
+  .card-body h2 { font-size: 16px; font-weight: 600; }
+  .card-body p { margin-top: 6px; font-size: 13px; color: #888; line-height: 1.6; }
+  .card-body a { display: inline-block; margin-top: 14px; font-size: 13px; color: #555; text-decoration: none; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
+  .card-body a:hover { color: #111; border-color: #111; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Portfolio</h1>
+  <p>WordPress / Web Design Works</p>
+</header>
+<div class="grid">
+  <div class="card">
+    <iframe src="clinique-blanc.html" scrolling="no"></iframe>
+    <div class="card-body">
+      <h2>Clinique Blanc</h2>
+      <p>クリニック・医療向け WordPressテーマ。清潔感と信頼感を軸にしたデザイン。</p>
+      <a href="clinique-blanc.html">詳細を見る →</a>
+    </div>
+  </div>
+  <div class="card">
+    <iframe src="pour-over-cafe.html" scrolling="no"></iframe>
+    <div class="card-body">
+      <h2>Pour Over Café</h2>
+      <p>カフェ・飲食店向け WordPressテーマ。温かみのある世界観とメニュー導線。</p>
+      <a href="pour-over-cafe.html">詳細を見る →</a>
+    </div>
+  </div>
+  <div class="card">
+    <iframe src="lexis-law.html" scrolling="no"></iframe>
+    <div class="card-body">
+      <h2>Lexis Law</h2>
+      <p>士業・法律事務所向け WordPressテーマ。信頼感と問い合わせ導線を重視。</p>
+      <a href="lexis-law.html">詳細を見る →</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
