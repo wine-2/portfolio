@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>haru. | 美容室 - 大阪・難波</title>
+  <meta name="description" content="大阪・難波のヘアサロン haru.（ハル）。カラーとパーマを得意とする、こだわりの小さなアトリエです。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <header class="site-header" id="site-header">
+    <nav class="nav-inner">
+      <a href="#top" class="nav-logo">haru.</a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く" aria-expanded="false">
+        <span class="toggle-bar"></span>
+        <span class="toggle-bar"></span>
+        <span class="toggle-bar"></span>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about" class="nav-link">about</a></li>
+        <li><a href="#menu" class="nav-link">menu</a></li>
+        <li><a href="#gallery" class="nav-link">gallery</a></li>
+        <li><a href="#access" class="nav-link">access</a></li>
+        <li>
+          <a href="#reserve" class="nav-link nav-link--reserve">reserve</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero">
+      <div class="hero-bg-shape hero-bg-shape--1"></div>
+      <div class="hero-bg-shape hero-bg-shape--2"></div>
+      <div class="hero-bg-shape hero-bg-shape--3"></div>
+
+      <div class="hero-content">
+        <p class="hero-eyebrow">hair atelier · osaka namba</p>
+        <h1 class="hero-title">
+          <span class="hero-title-main">haru.</span>
+        </h1>
+        <p class="hero-tagline">あなたの「似合う」を、<br class="sp-br"/>一緒に見つけます。</p>
+        <div class="hero-actions">
+          <a href="#reserve" class="btn btn--primary">ご予約はこちら</a>
+          <a href="#about" class="btn btn--ghost">もっと見る</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-illustration">
+          <svg viewBox="0 0 420 520" fill="none" xmlns="http://www.w3.org/2000/svg" class="hero-svg">
+            <!-- Abstract silhouette - organic hair shape -->
+            <ellipse cx="210" cy="180" rx="105" ry="118" fill="#e8d5c4" opacity="0.55"/>
+            <!-- Hair strands flowing down -->
+            <path d="M135 200 Q90 310 110 430" stroke="#b8857a" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+            <path d="M150 230 Q120 340 130 460" stroke="#b8857a" stroke-width="1.8" stroke-linecap="round" opacity="0.4"/>
+            <path d="M285 200 Q330 310 310 430" stroke="#b8857a" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+            <path d="M270 230 Q300 340 290 460" stroke="#b8857a" stroke-width="1.8" stroke-linecap="round" opacity="0.4"/>
+            <!-- Middle strands -->
+            <path d="M180 295 Q175 380 170 470" stroke="#b8857a" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+            <path d="M210 300 Q210 390 205 480" stroke="#c4947a" stroke-width="2.2" stroke-linecap="round" opacity="0.55"/>
+            <path d="M240 295 Q245 380 250 470" stroke="#b8857a" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+            <!-- Face oval -->
+            <ellipse cx="210" cy="210" rx="68" ry="78" fill="#f0e4d7" opacity="0.9"/>
+            <!-- Decorative circle -->
+            <circle cx="340" cy="80" r="38" fill="#b8857a" opacity="0.12"/>
+            <circle cx="340" cy="80" r="22" fill="#b8857a" opacity="0.14"/>
+            <!-- Small accent dots -->
+            <circle cx="82" cy="140" r="5" fill="#b8857a" opacity="0.3"/>
+            <circle cx="72" cy="155" r="3" fill="#b8857a" opacity="0.2"/>
+            <circle cx="355" cy="190" r="4" fill="#b8857a" opacity="0.25"/>
+            <!-- Scissors silhouette - subtle -->
+            <g opacity="0.18" transform="translate(52,320) rotate(-30)">
+              <ellipse cx="0" cy="0" rx="6" ry="22" fill="#1e1c1a"/>
+              <ellipse cx="16" cy="0" rx="6" ry="22" fill="#1e1c1a"/>
+              <rect x="-2" y="18" width="20" height="3" rx="1.5" fill="#1e1c1a"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <div class="hero-scroll-hint" aria-hidden="true">
+        <span class="scroll-line"></span>
+        <span class="scroll-text">scroll</span>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="section about" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-visual" aria-hidden="true">
+            <!-- Abstract portrait / atelier feel -->
+            <div class="about-portrait-wrap">
+              <svg viewBox="0 0 340 420" fill="none" xmlns="http://www.w3.org/2000/svg" class="about-svg">
+                <!-- Background rectangle -->
+                <rect x="30" y="30" width="280" height="355" rx="4" fill="#e8d5c4" opacity="0.35"/>
+                <!-- Body -->
+                <rect x="100" y="285" width="140" height="110" rx="8" fill="#d4b8a8" opacity="0.6"/>
+                <!-- Head -->
+                <ellipse cx="170" cy="178" rx="62" ry="72" fill="#f0e4d7" opacity="0.95"/>
+                <!-- Hair -->
+                <path d="M108 165 Q105 105 170 100 Q235 105 232 165 Q240 135 220 108 Q200 78 170 75 Q140 78 120 108 Q100 135 108 165Z" fill="#3d2b1f" opacity="0.75"/>
+                <!-- Hair sides -->
+                <path d="M108 165 Q98 200 105 235" stroke="#3d2b1f" stroke-width="8" stroke-linecap="round" opacity="0.55" fill="none"/>
+                <path d="M232 165 Q242 200 235 235" stroke="#3d2b1f" stroke-width="8" stroke-linecap="round" opacity="0.55" fill="none"/>
+                <!-- Apron/smock -->
+                <rect x="120" y="288" width="100" height="95" rx="6" fill="#faf7f2" opacity="0.8"/>
+                <!-- Pocket detail -->
+                <rect x="138" y="318" width="30" height="22" rx="3" fill="none" stroke="#b8857a" stroke-width="1.5" opacity="0.5"/>
+                <!-- Small scissor in pocket -->
+                <line x1="150" y1="322" x2="150" y2="338" stroke="#b8857a" stroke-width="1.5" opacity="0.6"/>
+                <line x1="155" y1="322" x2="155" y2="338" stroke="#b8857a" stroke-width="1.5" opacity="0.6"/>
+                <!-- Decorative element -->
+                <circle cx="295" cy="58" r="18" fill="#b8857a" opacity="0.15"/>
+                <circle cx="45" cy="370" r="12" fill="#b8857a" opacity="0.12"/>
+                <!-- Name tag area -->
+                <rect x="30" y="370" width="82" height="18" rx="3" fill="#b8857a" opacity="0.15"/>
+              </svg>
+              <div class="about-portrait-label">
+                <span>Nakamura Yuki</span>
+                <span class="about-portrait-title">オーナー / スタイリスト</span>
+              </div>
+            </div>
+
+            <div class="about-stats">
+              <div class="stat-item">
+                <span class="stat-number">17</span>
+                <span class="stat-unit">年</span>
+                <span class="stat-label">美容師歴</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-item">
+                <span class="stat-number">2</span>
+                <span class="stat-unit">度</span>
+                <span class="stat-label">渡欧研修</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-item">
+                <span class="stat-number">1</span>
+                <span class="stat-unit">人</span>
+                <span class="stat-label">完全マンツーマン</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-text">
+            <div class="section-label">about haru.</div>
+            <h2 class="section-title">初めて来てくれたお客さんと、<br/>２時間話してから初めてハサミを入れます。</h2>
+            <div class="about-story">
+              <p>
+                それが、私のやり方です。
+              </p>
+              <p>
+                大阪で生まれ育って、20代前半に「ここじゃないと学べないことがある」と思い立って東京へ。南青山のサロンで7年、本当に厳しかったけど、それ以上に充実していました。先輩にボロボロに言われながら、夜中まで練習して、泣いたことも一度や二度じゃない。でも、あの時間があったから今の私がある。
+              </p>
+              <p>
+                30代になって、パリとロンドンへ研修に行く機会をもらいました。向こうの美容師が「髪って、その人の生き方が出るんだよ」って言ってたのが、今でも頭に残ってる。帰国してから、もう一度ゆっくり考えました。
+              </p>
+              <p>
+                2019年、地元の大阪に戻って<em>haru.</em>を開いたのは、「急がない場所を作りたい」という気持ちからでした。1日に何人もこなすんじゃなくて、一人のお客さんと向き合って、その人にとってほんとうに「似合う」を一緒に探したい。
+              </p>
+              <p>
+                美容室って、緊張する場所だと思う人も多いですよね。私も最初はそうでした。だから、ここではコーヒーでも飲みながら、まずゆっくり話しましょう。どんな些細なことでも、遠慮なく言ってほしい。それが出発点です。
+              </p>
+            </div>
+            <p class="about-sign">— 中村 由紀</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MENU / PRICE ===================== -->
+    <section class="section menu" id="menu">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">menu & price</div>
+          <h2 class="section-title">メニュー・料金</h2>
+          <p class="section-subtitle">すべて税込価格です。カウンセリングは無料です。</p>
+        </div>
+
+        <div class="menu-grid">
+
+          <!-- CUT -->
+          <div class="menu-card">
+            <div class="menu-card-header">
+              <div class="menu-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="14" cy="14" r="7" stroke="#b8857a" stroke-width="1.8"/>
+                  <circle cx="34" cy="14" r="7" stroke="#b8857a" stroke-width="1.8"/>
+                  <line x1="19" y1="19" x2="34" y2="38" stroke="#b8857a" stroke-width="1.8" stroke-linecap="round"/>
+                  <line x1="29" y1="19" x2="14" y2="38" stroke="#b8857a" stroke-width="1.8" stroke-linecap="round"/>
+                  <line x1="18" y1="28" x2="30" y2="28" stroke="#b8857a" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3 class="menu-card-title">カット</h3>
+              <p class="menu-card-desc">カウンセリング込み。骨格・顔型・髪質・ライフスタイルをヒアリングしてから施術します。</p>
+            </div>
+            <div class="menu-items">
+              <div class="menu-item">
+                <span class="menu-item-name">カット（シャンプー・ブロー込み）</span>
+                <span class="menu-item-price">¥7,700</span>
+              </div>
+              <div class="menu-item">
+                <span class="menu-item-name">カット + シャンプーなし</span>
+                <span class="menu-item-price">¥6,600</span>
+              </div>
+              <div class="menu-item">
+                <span class="menu-item-name">前髪カット</span>
+                <span class="menu-item-price">¥1,650</span>
+              </div>
+              <div class="menu-item menu-item--note">
+                <span class="menu-item-name">※ロング料金 (+5cm以上)</span>
+                <span class="menu-item-price">+¥1,100</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- COLOR -->
+          <div class="menu-card">
+            <div class="menu-card-header">
+              <div class="menu-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M24 6 C24 6 12 20 12 30 C12 36.6 17.4 42 24 42 C30.6 42 36 36.6 36 30 C36 20 24 6 24 6Z" stroke="#b8857a" stroke-width="1.8" stroke-linejoin="round"/>
+                  <path d="M16 32 C17 28 20 26 24 26" stroke="#b8857a" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+                </svg>
+              </div>
+              <h3 class="menu-card-title">カラー</h3>
+              <p class="menu-card-desc">低ダメージにこだわった薬剤を使用。白髪染めから外国人風カラーまで。ブリーチはご相談ください。</p>
+            </div>
+            <div class="menu-items">
+              <div class="menu-item">
+                <span class="menu-item-name">リタッチカラー（根元のみ）</span>
+                <span class="menu-item-price">¥9,900</span>
+              </div>
+              <div class="menu-item">
+                <span class="menu-item-name">全体カラー（ショート〜ミディアム）</span>
+                <span class="menu-item-price">¥13,200</span>
+              </div>
+              <div class="menu-item">
+                <span class="menu-item-name">全体カラー（ロング）</span>
+                <span class="menu-item-price">¥15,400</span>
+              </div>
+              <div class="menu-item">
+                <span class="menu-item-name">ハイライト・バレイヤージュ</span>
+                <span class="menu-item-price">¥16,500〜</span>
+              </div>
+              <div class="menu-item">
+                <span class="menu-item-name">白髪染め（根元）</span>
+                <span class="menu-item-price">¥8,800</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PERM -->
+          <div class="menu-card">
+            <div class="menu-card-header">
+              <div class="menu-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14 10 Q22 18 14 26 Q6 34 14 42" stroke="#b8857a" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+                  <path d="M24 10 Q32 18 24 26 Q16 34 24 42" stroke="#b8857a" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+                  <path d="M34 10 Q42 18 34 26 Q26 34 34 42" stroke="#b8857a" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+                </svg>
+              </div>
+              <h3 class="menu-card-title">パーマ</h3>
+              <p class="menu-card-desc">自然なウェーブから、ふわっとしたゆるパーマまで。ご自宅でのスタイリングのしやすさを最優先に考えます。</p>
+            </div>
+            <div class="menu-items">
+              <div class="menu-item">
+                <span class="menu-item-name">デジタルパーマ（ショート〜ミディ）</span>
+                <span class="menu-item-price">¥17,600</span>
+              </div>
+              <div class="menu-item">
+                <span class="menu-item-name">デジタルパーマ（ロング）</span>
+                <span class="menu-item-price">¥19,800</span>
+              </div>
+              <div class="menu-item">
+                <span class="menu-item-name">コールドパーマ（ショート〜ミディ）</span>
+                <span class="menu-item-price">¥13,200</span>
+              </div>
+              <div class="menu-item">
+                <span class="menu-item-name">縮毛矯正（根元）</span>
+                <span class="menu-item-price">¥22,000</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- TREATMENT -->
+          <div class="menu-card">
+            <div class="menu-card-header">
+              <div class="menu-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M24 8 L28 20 L40 20 L30 28 L34 40 L24 32 L14 40 L18 28 L8 20 L20 20 Z" stroke="#b8857a" stroke-width="1.8" stroke-linejoin="round" fill="none"/>
+                  <circle cx="24" cy="24" r="5" fill="#b8857a" opacity="0.2"/>
+                </svg>
+              </div>
+              <h3 class="menu-card-title">トリートメント</h3>
+              <p class="menu-card-desc">ダメージ補修から予防まで。カラーやパーマと合わせることで、より効果が出ます。</p>
+            </div>
+            <div class="menu-items">
+              <div class="menu-item">
+                <span class="menu-item-name">ハホニコ トリートメント</span>
+                <span class="menu-item-price">¥4,400</span>
+              </div>
+              <div class="menu-item">
+                <span class="menu-item-name">サイエンスアクア</span>
+                <span class="menu-item-price">¥8,800〜</span>
+              </div>
+              <div class="menu-item">
+                <span class="menu-item-name">ヘッドスパ（30分）</span>
+                <span class="menu-item-price">¥5,500</span>
+              </div>
+              <div class="menu-item">
+                <span class="menu-item-name">ヘッドスパ（60分）</span>
+                <span class="menu-item-price">¥9,900</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="menu-note">
+          * 上記は目安料金です。髪の長さ・状態によって変わることがあります。<br/>
+          * 初回の方はカウンセリングに時間をかけるため、余裕を持ってご予約ください（目安：カットのみ 90分）。
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================== GALLERY ===================== -->
+    <section class="section gallery" id="gallery">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">gallery</div>
+          <h2 class="section-title">スタイルギャラリー</h2>
+          <p class="section-subtitle">色と質感で表現する、それぞれの「似合う」。</p>
+        </div>
+
+        <div class="gallery-grid">
+
+          <article class="gallery-item gallery-item--large">
+            <div class="gallery-art" aria-hidden="true">
+              <!-- Ash beige long hair -->
+              <svg viewBox="0 0 320 400" fill="none" xmlns="http://www.w3.org/2000/svg" class="gallery-svg">
+                <rect width="320" height="400" fill="#ede5dc"/>
+                <!-- Long wavy hair shape -->
+                <ellipse cx="160" cy="120" rx="80" ry="90" fill="#c8b4a0"/>
+                <path d="M82 140 Q50 220 55 340 Q65 380 80 400" fill="#c8b4a0"/>
+                <path d="M238 140 Q270 220 265 340 Q255 380 240 400" fill="#c8b4a0"/>
+                <path d="M82 140 Q65 200 70 300 Q75 360 82 400" fill="#baa592" opacity="0.7"/>
+                <path d="M238 140 Q255 200 250 300 Q245 360 238 400" fill="#baa592" opacity="0.7"/>
+                <!-- Center parting strands -->
+                <path d="M140 200 Q135 280 130 400" fill="#b09580" opacity="0.8" stroke="none"/>
+                <path d="M160 205 Q158 290 156 400" fill="#b09580" opacity="0.6" stroke="none"/>
+                <path d="M180 200 Q185 280 190 400" fill="#b09580" opacity="0.8" stroke="none"/>
+                <!-- Face -->
+                <ellipse cx="160" cy="155" rx="52" ry="60" fill="#f5ece3"/>
+                <!-- Hair top/parting highlight -->
+                <ellipse cx="160" cy="95" rx="45" ry="35" fill="#d6c4b0" opacity="0.7"/>
+              </svg>
+            </div>
+            <div class="gallery-item-info">
+              <h3 class="gallery-item-title">アッシュベージュ</h3>
+              <p class="gallery-item-desc">やわらかく透ける、旬のくすみカラー。光に当たると上品な艶感。</p>
+              <span class="gallery-item-tag">カラー</span>
+            </div>
+          </article>
+
+          <article class="gallery-item">
+            <div class="gallery-art" aria-hidden="true">
+              <!-- Loose perm bob -->
+              <svg viewBox="0 0 240 300" fill="none" xmlns="http://www.w3.org/2000/svg" class="gallery-svg">
+                <rect width="240" height="300" fill="#f0e8e0"/>
+                <!-- Wavy bob shape -->
+                <ellipse cx="120" cy="95" rx="70" ry="78" fill="#5a3825"/>
+                <!-- Wavy ends -->
+                <path d="M52 130 Q35 170 42 200 Q50 225 60 240 Q72 255 80 265" stroke="#5a3825" stroke-width="24" stroke-linecap="round" fill="none"/>
+                <path d="M188 130 Q205 170 198 200 Q190 225 180 240 Q168 255 160 265" stroke="#5a3825" stroke-width="24" stroke-linecap="round" fill="none"/>
+                <!-- Wave detail lines -->
+                <path d="M60 160 Q48 175 58 190" stroke="#7a5540" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.5"/>
+                <path d="M180 160 Q192 175 182 190" stroke="#7a5540" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.5"/>
+                <!-- Bottom wavy edges -->
+                <path d="M80 265 Q95 280 120 278 Q145 280 160 265" stroke="#5a3825" stroke-width="20" stroke-linecap="round" fill="none"/>
+                <!-- Face -->
+                <ellipse cx="120" cy="130" rx="48" ry="56" fill="#f5ece3"/>
+              </svg>
+            </div>
+            <div class="gallery-item-info">
+              <h3 class="gallery-item-title">ゆるふわボブパーマ</h3>
+              <p class="gallery-item-desc">毎朝スタイリング不要。自然な動きが魅力のナチュラルウェーブ。</p>
+              <span class="gallery-item-tag">パーマ</span>
+            </div>
+          </article>
+
+          <article class="gallery-item">
+            <div class="gallery-art" aria-hidden="true">
+              <!-- Highlight color -->
+              <svg viewBox="0 0 240 300" fill="none" xmlns="http://www.w3.org/2000/svg" class="gallery-svg">
+                <rect width="240" height="300" fill="#e8ddd5"/>
+                <!-- Base dark hair -->
+                <ellipse cx="120" cy="100" rx="75" ry="85" fill="#2d1f15"/>
+                <!-- Long strands down -->
+                <path d="M47 140 Q30 210 38 300" stroke="#2d1f15" stroke-width="20" stroke-linecap="round" fill="none"/>
+                <path d="M193 140 Q210 210 202 300" stroke="#2d1f15" stroke-width="20" stroke-linecap="round" fill="none"/>
+                <path d="M120 180 Q118 240 116 300" stroke="#2d1f15" stroke-width="18" stroke-linecap="round" fill="none"/>
+                <!-- Highlight streaks -->
+                <path d="M80 120 Q70 180 72 260 Q73 280 75 300" stroke="#c8a882" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.85"/>
+                <path d="M100 130 Q95 195 94 280" stroke="#d4b890" stroke-width="3.5" stroke-linecap="round" fill="none" opacity="0.75"/>
+                <path d="M145 128 Q150 192 152 275" stroke="#c8a882" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.85"/>
+                <path d="M162 120 Q168 185 165 265" stroke="#d4b890" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+                <!-- Face -->
+                <ellipse cx="120" cy="135" rx="50" ry="58" fill="#f0e5db"/>
+              </svg>
+            </div>
+            <div class="gallery-item-info">
+              <h3 class="gallery-item-title">バレイヤージュハイライト</h3>
+              <p class="gallery-item-desc">根元から毛先へ、自然なグラデーション。太陽の光を感じる立体感。</p>
+              <span class="gallery-item-tag">カラー</span>
+            </div>
+          </article>
+
+          <article class="gallery-item gallery-item--wide">
+            <div class="gallery-art" aria-hidden="true">
+              <!-- Short cut clean -->
+              <svg viewBox="0 0 400 260" fill="none" xmlns="http://www.w3.org/2000/svg" class="gallery-svg">
+                <rect width="400" height="260" fill="#f5ede6"/>
+                <!-- Short clean bob -->
+                <ellipse cx="200" cy="100" rx="78" ry="82" fill="#8b6052"/>
+                <!-- Clean cut line -->
+                <rect x="128" y="155" width="144" height="42" rx="4" fill="#8b6052"/>
+                <!-- Inner tone -->
+                <ellipse cx="200" cy="100" rx="65" ry="70" fill="#9a6e60" opacity="0.4"/>
+                <!-- Face -->
+                <ellipse cx="200" cy="115" rx="50" ry="56" fill="#f5e8df"/>
+                <!-- Neck -->
+                <rect x="186" y="168" width="28" height="35" rx="8" fill="#f0ddd4" opacity="0.9"/>
+                <!-- Shoulder suggestion -->
+                <ellipse cx="200" cy="220" rx="85" ry="40" fill="#e8d5c4" opacity="0.5"/>
+                <!-- Texture lines in hair -->
+                <path d="M140 90 Q155 85 170 90" stroke="#7a5245" stroke-width="1.5" fill="none" opacity="0.4"/>
+                <path d="M225 88 Q240 83 255 88" stroke="#7a5245" stroke-width="1.5" fill="none" opacity="0.4"/>
+                <path d="M145 108 Q160 103 178 108" stroke="#7a5245" stroke-width="1.5" fill="none" opacity="0.35"/>
+              </svg>
+            </div>
+            <div class="gallery-item-info">
+              <h3 class="gallery-item-title">ショートボブ × テラコッタカラー</h3>
+              <p class="gallery-item-desc">凛と知的な印象に。骨格を美しく見せるラインを計算したカット。肌なじみのよいテラコッタで大人の色気も。</p>
+              <span class="gallery-item-tag">カット + カラー</span>
+            </div>
+          </article>
+
+          <article class="gallery-item">
+            <div class="gallery-art" aria-hidden="true">
+              <!-- Natural perm medium -->
+              <svg viewBox="0 0 240 300" fill="none" xmlns="http://www.w3.org/2000/svg" class="gallery-svg">
+                <rect width="240" height="300" fill="#ece4dc"/>
+                <!-- Textured wavy medium -->
+                <ellipse cx="120" cy="95" rx="72" ry="80" fill="#4a3228"/>
+                <!-- Wavy sides -->
+                <path d="M50 135 Q28 165 35 195 Q42 220 52 245 Q65 268 78 285 Q90 298 100 300" stroke="#4a3228" stroke-width="26" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <path d="M190 135 Q212 165 205 195 Q198 220 188 245 Q175 268 162 285 Q150 298 140 300" stroke="#4a3228" stroke-width="26" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <!-- Wave ripples -->
+                <path d="M50 150 Q38 163 48 176" stroke="#6a4e40" stroke-width="4" fill="none" opacity="0.5"/>
+                <path d="M50 182 Q38 195 48 208" stroke="#6a4e40" stroke-width="4" fill="none" opacity="0.45"/>
+                <path d="M190 150 Q202 163 192 176" stroke="#6a4e40" stroke-width="4" fill="none" opacity="0.5"/>
+                <path d="M190 182 Q202 195 192 208" stroke="#6a4e40" stroke-width="4" fill="none" opacity="0.45"/>
+                <!-- Center hair down -->
+                <path d="M120 170 Q115 225 112 300" stroke="#4a3228" stroke-width="16" stroke-linecap="round" fill="none"/>
+                <!-- Face -->
+                <ellipse cx="120" cy="130" rx="48" ry="56" fill="#f3e9e0"/>
+              </svg>
+            </div>
+            <div class="gallery-item-info">
+              <h3 class="gallery-item-title">ナチュラルウェーブ ミディアム</h3>
+              <p class="gallery-item-desc">ニュアンス重視のゆるパーマ。乾かすだけで決まる、忙しい日々に寄り添うスタイル。</p>
+              <span class="gallery-item-tag">パーマ</span>
+            </div>
+          </article>
+
+          <article class="gallery-item">
+            <div class="gallery-art" aria-hidden="true">
+              <!-- Gray/silver tone -->
+              <svg viewBox="0 0 240 300" fill="none" xmlns="http://www.w3.org/2000/svg" class="gallery-svg">
+                <rect width="240" height="300" fill="#eae6e2"/>
+                <!-- Silver/gray long straight -->
+                <ellipse cx="120" cy="95" rx="68" ry="78" fill="#9e9a98"/>
+                <!-- Straight long hair sides -->
+                <path d="M54 140 Q45 210 50 300" stroke="#9e9a98" stroke-width="22" stroke-linecap="round" fill="none"/>
+                <path d="M186 140 Q195 210 190 300" stroke="#9e9a98" stroke-width="22" stroke-linecap="round" fill="none"/>
+                <!-- Center straight strands -->
+                <path d="M108 180 Q106 240 105 300" stroke="#8a8684" stroke-width="12" stroke-linecap="round" fill="none"/>
+                <path d="M120 182 Q120 245 120 300" stroke="#aeaaa8" stroke-width="10" stroke-linecap="round" fill="none"/>
+                <path d="M132 180 Q134 240 135 300" stroke="#8a8684" stroke-width="12" stroke-linecap="round" fill="none"/>
+                <!-- Silver sheen highlights -->
+                <path d="M95 110 Q88 150 90 200" stroke="#c8c4c2" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+                <path d="M140 108 Q148 148 146 198" stroke="#c8c4c2" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+                <!-- Face -->
+                <ellipse cx="120" cy="130" rx="48" ry="56" fill="#f3edea"/>
+              </svg>
+            </div>
+            <div class="gallery-item-info">
+              <h3 class="gallery-item-title">グレージュ × ストレート</h3>
+              <p class="gallery-item-desc">上品な抜け感。グレーを怖がらないで——似合うと分かったとき、きっと好きになれる。</p>
+              <span class="gallery-item-tag">カラー</span>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="gallery-note">
+          ※ イラストはイメージです。仕上がりは骨格・髪質・現在の状態によって変わります。<br/>
+          詳しくはカウンセリング時にご確認ください。
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================== ACCESS ===================== -->
+    <section class="section access" id="access">
+      <div class="container">
+        <div class="access-grid">
+
+          <div class="access-info">
+            <div class="section-label">access</div>
+            <h2 class="section-title">アクセス・営業時間</h2>
+
+            <div class="access-details">
+              <div class="access-item">
+                <div class="access-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
+                  </svg>
+                </div>
+                <div class="access-item-text">
+                  <span class="access-item-label">住所</span>
+                  <span class="access-item-value">〒542-0076<br/>大阪府大阪市中央区難波4丁目2-8<br/>ハルビル 2F</span>
+                </div>
+              </div>
+
+              <div class="access-item">
+                <div class="access-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 17.93v-2.02c2.76-.46 4.93-2.63 5.39-5.39h2.02c-.49 3.68-3.36 6.56-7.41 7.41zm0-15.86V2.07c4.05.85 6.92 3.72 7.41 7.41h-2.02c-.46-2.76-2.63-4.93-5.39-5.39zM4.07 11.5h2.02c.46 2.76 2.63 4.93 5.39 5.39v2.02c-4.05-.85-6.92-3.72-7.41-7.41zm0-1h7.41C11.54 8.24 9.37 6.07 6.61 5.61h-2.02C5.08 4.93 8 3 12 3v2h-1.5V2.07c-3.68.49-6.56 3.36-7.41 7.43H4.07z" fill="currentColor" opacity="0"/>
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+                    <polyline points="12 6 12 12 16 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div class="access-item-text">
+                  <span class="access-item-label">営業時間</span>
+                  <div class="access-hours">
+                    <div class="access-hours-row">
+                      <span class="hours-day">火〜土</span>
+                      <span class="hours-time">10:00 – 19:00</span>
+                    </div>
+                    <div class="access-hours-row">
+                      <span class="hours-day">日・祝</span>
+                      <span class="hours-time">10:00 – 17:00</span>
+                    </div>
+                    <div class="access-hours-row access-hours-row--closed">
+                      <span class="hours-day">月曜日</span>
+                      <span class="hours-time">定休日</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="access-item">
+                <div class="access-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M7 15V10M12 15V9M17 15V12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div class="access-item-text">
+                  <span class="access-item-label">アクセス</span>
+                  <span class="access-item-value">大阪メトロ 千日前線・御堂筋線<br/>「難波駅」11番出口より徒歩3分</span>
+                </div>
+              </div>
+
+              <div class="access-item">
+                <div class="access-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="currentColor" opacity="0.8"/>
+                  </svg>
+                </div>
+                <div class="access-item-text">
+                  <span class="access-item-label">ご予約・お問合わせ</span>
+                  <span class="access-item-value">
+                    <a href="tel:06-1234-5678" class="access-phone">06-1234-5678</a><br/>
+                    <small>（営業時間内にお電話ください）</small>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="access-map-wrap">
+            <!-- Map illustration placeholder -->
+            <div class="map-placeholder" aria-label="地図 - 大阪市中央区難波4丁目">
+              <svg viewBox="0 0 420 320" fill="none" xmlns="http://www.w3.org/2000/svg" class="map-svg">
+                <!-- Map background -->
+                <rect width="420" height="320" fill="#ede8e2"/>
+                <!-- Streets - horizontal -->
+                <rect x="0" y="80" width="420" height="18" fill="#faf7f2"/>
+                <rect x="0" y="148" width="420" height="14" fill="#faf7f2"/>
+                <rect x="0" y="218" width="420" height="18" fill="#faf7f2"/>
+                <!-- Streets - vertical -->
+                <rect x="60" y="0" width="16" height="320" fill="#faf7f2"/>
+                <rect x="160" y="0" width="12" height="320" fill="#faf7f2"/>
+                <rect x="240" y="0" width="16" height="320" fill="#faf7f2"/>
+                <rect x="340" y="0" width="14" height="320" fill="#faf7f2"/>
+                <!-- Blocks / buildings -->
+                <rect x="80" y="12" width="75" height="62" rx="2" fill="#ddd5cc"/>
+                <rect x="180" y="12" width="55" height="62" rx="2" fill="#ddd5cc"/>
+                <rect x="258" y="12" width="76" height="62" rx="2" fill="#ddd5cc"/>
+                <rect x="80" y="100" width="75" height="42" rx="2" fill="#ddd5cc"/>
+                <rect x="180" y="100" width="55" height="42" rx="2" fill="#ddd5cc"/>
+                <rect x="258" y="100" width="76" height="42" rx="2" fill="#ddd5cc"/>
+                <rect x="80" y="164" width="75" height="48" rx="2" fill="#ddd5cc"/>
+                <rect x="180" y="164" width="55" height="48" rx="2" fill="#ddd5cc"/>
+                <rect x="258" y="164" width="76" height="48" rx="2" fill="#ddd5cc"/>
+                <rect x="80" y="236" width="75" height="72" rx="2" fill="#ddd5cc"/>
+                <rect x="180" y="236" width="55" height="72" rx="2" fill="#ddd5cc"/>
+                <rect x="258" y="236" width="76" height="72" rx="2" fill="#ddd5cc"/>
+                <rect x="0" y="0" width="54" height="74" rx="2" fill="#d8d0c7"/>
+                <rect x="0" y="100" width="54" height="42" rx="2" fill="#d8d0c7"/>
+                <!-- Station marker -->
+                <circle cx="172" cy="155" r="14" fill="#c8a882" opacity="0.9"/>
+                <text x="172" y="159" text-anchor="middle" font-family="sans-serif" font-size="10" fill="white" font-weight="bold">駅</text>
+                <!-- Salon pin -->
+                <circle cx="252" cy="140" r="18" fill="#b8857a"/>
+                <circle cx="252" cy="140" r="10" fill="white"/>
+                <circle cx="252" cy="140" r="5" fill="#b8857a"/>
+                <path d="M252 158 L246 172 L252 168 L258 172 Z" fill="#b8857a"/>
+                <!-- Label -->
+                <rect x="200" y="112" width="60" height="18" rx="3" fill="white" opacity="0.9"/>
+                <text x="230" y="125" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#1e1c1a">haru.</text>
+                <!-- Walking path -->
+                <path d="M172 155 Q172 148 180 148 Q220 148 228 140 Q235 132 252 132" stroke="#b8857a" stroke-width="2" stroke-dasharray="4 3" fill="none" opacity="0.6"/>
+                <!-- Walk time -->
+                <rect x="190" y="128" width="44" height="16" rx="3" fill="#b8857a" opacity="0.85"/>
+                <text x="212" y="140" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="white">徒歩3分</text>
+                <!-- Map label -->
+                <rect x="10" y="284" width="90" height="26" rx="3" fill="white" opacity="0.7"/>
+                <text x="55" y="301" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#888">難波駅周辺</text>
+              </svg>
+            </div>
+            <p class="map-caption">※ 上記は簡略地図です。詳しくはGoogle マップでご確認ください。</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== RESERVATION ===================== -->
+    <section class="section reserve" id="reserve">
+      <div class="container">
+        <div class="reserve-inner">
+          <div class="reserve-intro">
+            <div class="section-label">reservation</div>
+            <h2 class="section-title">ご予約</h2>
+            <p class="reserve-message">
+              予約フォームからお気軽にどうぞ。<br/>
+              確認後、営業時間内にご連絡します（通常、当日〜翌日以内）。<br/>
+              初めての方も、ぜひ気軽に送ってみてください。
+            </p>
+            <div class="reserve-note-card">
+              <p>はじめての方へ</p>
+              <p>初回は少し長めに時間をとっています。ゆっくりお話しましょう。カウンセリング代は無料です。</p>
+            </div>
+          </div>
+
+          <form class="reserve-form" id="reserve-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="f-name" class="form-label">お名前 <span class="required">*</span></label>
+                <input type="text" id="f-name" name="name" class="form-input" placeholder="山田 花子" required autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <label for="f-phone" class="form-label">お電話番号 <span class="required">*</span></label>
+                <input type="tel" id="f-phone" name="phone" class="form-input" placeholder="090-0000-0000" required autocomplete="tel" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="f-date" class="form-label">ご希望日 <span class="required">*</span></label>
+                <input type="date" id="f-date" name="date" class="form-input" required />
+              </div>
+              <div class="form-group">
+                <label for="f-time" class="form-label">ご希望時間帯 <span class="required">*</span></label>
+                <select id="f-time" name="time" class="form-input form-select" required>
+                  <option value="" disabled selected>選んでください</option>
+                  <option value="morning">午前中（10:00〜12:00）</option>
+                  <option value="early-afternoon">13時頃</option>
+                  <option value="afternoon">14〜16時頃</option>
+                  <option value="late">17時以降</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="f-service" class="form-label">ご希望メニュー <span class="required">*</span></label>
+              <select id="f-service" name="service" class="form-input form-select" required>
+                <option value="" disabled selected>メニューを選んでください</option>
+                <optgroup label="カット">
+                  <option value="cut">カット（シャンプー・ブロー込み）</option>
+                  <option value="cut-nobl">カット（シャンプーなし）</option>
+                  <option value="fringe">前髪カット</option>
+                </optgroup>
+                <optgroup label="カラー">
+                  <option value="retouch">リタッチカラー</option>
+                  <option value="fullcolor">全体カラー</option>
+                  <option value="highlight">ハイライト・バレイヤージュ</option>
+                  <option value="graying">白髪染め</option>
+                </optgroup>
+                <optgroup label="パーマ">
+                  <option value="digital-perm">デジタルパーマ</option>
+                  <option value="cold-perm">コールドパーマ</option>
+                  <option value="straighten">縮毛矯正</option>
+                </optgroup>
+                <optgroup label="トリートメント">
+                  <option value="treatment">トリートメント</option>
+                  <option value="spa30">ヘッドスパ（30分）</option>
+                  <option value="spa60">ヘッドスパ（60分）</option>
+                </optgroup>
+                <option value="consult">まず相談だけしたい</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="f-first" class="form-label">ご来店は</label>
+              <div class="radio-group">
+                <label class="radio-label">
+                  <input type="radio" name="first_visit" value="first" checked />
+                  <span class="radio-custom"></span>
+                  はじめて
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="first_visit" value="return" />
+                  <span class="radio-custom"></span>
+                  2回目以降
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="f-message" class="form-label">ご要望・気になること（任意）</label>
+              <textarea id="f-message" name="message" class="form-input form-textarea" placeholder="「くせ毛で広がりやすい」「白髪が目立ってきた」「明るくしたいけど痛ませたくない」など、どんな些細なことでもどうぞ。"></textarea>
+            </div>
+
+            <div class="form-group form-group--submit">
+              <button type="submit" class="btn btn--primary btn--full">予約リクエストを送る</button>
+              <p class="form-privacy">送信された情報は予約確認のみに使用します。第三者への提供はありません。</p>
+            </div>
+
+            <div class="form-success" id="form-success" aria-live="polite">
+              <div class="form-success-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="24" cy="24" r="22" stroke="#b8857a" stroke-width="2"/>
+                  <path d="M14 24 L20 30 L34 18" stroke="#b8857a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3>ありがとうございます。</h3>
+              <p>予約リクエストを受け付けました。<br/>営業時間内にご連絡いたします。</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#top" class="footer-logo">haru.</a>
+          <p class="footer-tagline">あなたの「似合う」を、一緒に見つけます。</p>
+          <address class="footer-address">
+            〒542-0076 大阪府大阪市中央区難波4丁目2-8 ハルビル 2F<br/>
+            <a href="tel:06-1234-5678">06-1234-5678</a>
+          </address>
+        </div>
+
+        <nav class="footer-nav" aria-label="フッターナビゲーション">
+          <ul>
+            <li><a href="#about">about</a></li>
+            <li><a href="#menu">menu & price</a></li>
+            <li><a href="#gallery">gallery</a></li>
+            <li><a href="#access">access</a></li>
+            <li><a href="#reserve">reservation</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-hours">
+          <h3 class="footer-hours-title">営業時間</h3>
+          <dl class="footer-hours-list">
+            <div class="footer-hours-row">
+              <dt>火〜土</dt>
+              <dd>10:00 – 19:00</dd>
+            </div>
+            <div class="footer-hours-row">
+              <dt>日・祝</dt>
+              <dd>10:00 – 17:00</dd>
+            </div>
+            <div class="footer-hours-row footer-hours-row--closed">
+              <dt>月曜日</dt>
+              <dd>定休日</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 haru. hair atelier. All rights reserved.</p>
+        <p class="footer-copy-jp">大阪・難波のヘアサロン haru.（ハル）</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

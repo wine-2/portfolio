@@ -1,0 +1,204 @@
+/* ============================================
+   Animations & Micro-interactions
+   意図的で繊細なアニメーション定義
+   ============================================ */
+
+/* ===== prefers-reduced-motion (必須) ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===== スクロールアニメーション ===== */
+
+/* フェードイン（下から） */
+.fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* フェードイン（左から） */
+.fade-right {
+  opacity: 0;
+  transform: translateX(-28px);
+  transition:
+    opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* フェードイン（右から） */
+.fade-left {
+  opacity: 0;
+  transform: translateX(28px);
+  transition:
+    opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* シンプルなフェード */
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
+
+/* スタガー（順番にアニメーション） */
+.stagger > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stagger.visible > *:nth-child(1) { transition-delay: 0ms; opacity: 1; transform: translateY(0); }
+.stagger.visible > *:nth-child(2) { transition-delay: 80ms; opacity: 1; transform: translateY(0); }
+.stagger.visible > *:nth-child(3) { transition-delay: 160ms; opacity: 1; transform: translateY(0); }
+.stagger.visible > *:nth-child(4) { transition-delay: 240ms; opacity: 1; transform: translateY(0); }
+.stagger.visible > *:nth-child(5) { transition-delay: 320ms; opacity: 1; transform: translateY(0); }
+.stagger.visible > *:nth-child(6) { transition-delay: 400ms; opacity: 1; transform: translateY(0); }
+
+
+/* ===== ヒーローのイントロアニメーション ===== */
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero__eyebrow {
+  animation: heroFadeUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.1s both;
+}
+
+.hero__headline {
+  animation: heroFadeUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.25s both;
+}
+
+.hero__body {
+  animation: heroFadeUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.4s both;
+}
+
+.hero__actions {
+  animation: heroFadeUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.55s both;
+}
+
+.hero__scroll-hint {
+  animation: heroFadeUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.8s both;
+}
+
+
+/* ===== ナビゲーションのアニメーション ===== */
+
+@keyframes navFadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.nav {
+  animation: navFadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.05s both;
+}
+
+
+/* ===== カウントアップアニメーション（数字） ===== */
+
+@keyframes countUp {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.stat-card__number {
+  animation: none; /* JS側で制御 */
+}
+
+.stat-card.visible .stat-card__number {
+  animation: countUp 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+
+/* ===== ローディングのパルス（フォーム送信中） ===== */
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.btn.loading {
+  pointer-events: none;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+
+/* ===== ホバー効果（nav line animation already in components.css） ===== */
+
+/* スムーズなアンダーライン */
+.underline-grow {
+  position: relative;
+}
+
+.underline-grow::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: currentColor;
+  transition: width var(--transition-normal);
+}
+
+.underline-grow:hover::after {
+  width: 100%;
+}
+
+
+/* ===== SVGイラストのフロートアニメーション ===== */
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.float-slow:nth-child(2) {
+  animation-delay: -2s;
+}
+
+.float-slow:nth-child(3) {
+  animation-delay: -4s;
+}

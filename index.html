@@ -1,56 +1,615 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio</title>
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Helvetica Neue', sans-serif; background: #f8f8f8; color: #333; }
-  header { background: #fff; padding: 48px 40px 32px; border-bottom: 1px solid #e8e8e8; }
-  header h1 { font-size: 24px; font-weight: 600; letter-spacing: 0.05em; }
-  header p { margin-top: 8px; font-size: 14px; color: #888; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; padding: 48px 40px; max-width: 1200px; margin: 0 auto; }
-  .card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.06); transition: transform 0.2s, box-shadow 0.2s; }
-  .card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(0,0,0,0.10); }
-  .card iframe { width: 100%; height: 220px; border: none; display: block; }
-  .card-body { padding: 20px 24px 24px; }
-  .card-body h2 { font-size: 16px; font-weight: 600; }
-  .card-body p { margin-top: 6px; font-size: 13px; color: #888; line-height: 1.6; }
-  .card-body a { display: inline-block; margin-top: 14px; font-size: 13px; color: #555; text-decoration: none; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
-  .card-body a:hover { color: #111; border-color: #111; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ウェブ制作 | 人の温かさが伝わるサイトをつくります</title>
+  <meta name="description" content="AIと人間の感性を組み合わせて、あなたのビジネスが本当に伝えたいことをウェブサイトで表現します。ランサーズ・ここなら対応。小規模サイト¥55,000〜。">
+
+  <!-- Google Fonts プリロード -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@400;500;700&display=swap"
+    rel="stylesheet">
+
+  <!-- スタイルシート（カスケード順） -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
 </head>
+
 <body>
-<header>
-  <h1>Portfolio</h1>
-  <p>WordPress / Web Design Works</p>
-</header>
-<div class="grid">
-  <div class="card">
-    <iframe src="clinique-blanc.html" scrolling="no"></iframe>
-    <div class="card-body">
-      <h2>Clinique Blanc</h2>
-      <p>クリニック・医療向け WordPressテーマ。清潔感と信頼感を軸にしたデザイン。</p>
-      <a href="clinique-blanc.html">詳細を見る →</a>
+
+  <!-- スキップリンク（アクセシビリティ） -->
+  <a href="#main" class="skip-link">メインコンテンツへ</a>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header>
+    <nav class="nav" role="navigation" aria-label="メインナビゲーション">
+      <div class="container nav__inner">
+
+        <!-- ロゴ -->
+        <a href="#" class="nav__logo" aria-label="ホームへ戻る">
+          <span class="nav__logo-mark" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+              <rect x="2" y="2" width="6" height="6" rx="1.5" fill="white" />
+              <rect x="10" y="2" width="6" height="6" rx="1.5" fill="white" opacity="0.6" />
+              <rect x="2" y="10" width="6" height="6" rx="1.5" fill="white" opacity="0.6" />
+              <rect x="10" y="10" width="6" height="6" rx="1.5" fill="white" opacity="0.3" />
+            </svg>
+          </span>
+          <span>ATELIER WEB</span>
+        </a>
+
+        <!-- デスクトップナビ -->
+        <ul class="nav__links" role="list">
+          <li><a href="#about" class="nav__link">制作の考え方</a></li>
+          <li><a href="#services" class="nav__link">サービス</a></li>
+          <li><a href="#works" class="nav__link">制作実績</a></li>
+          <li><a href="#process" class="nav__link">制作の流れ</a></li>
+          <li>
+            <a href="#contact" class="btn btn--primary btn--nav">
+              相談してみる
+            </a>
+          </li>
+        </ul>
+
+        <!-- モバイルメニューボタン -->
+        <button class="nav__toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="nav__toggle-line"></span>
+          <span class="nav__toggle-line"></span>
+          <span class="nav__toggle-line"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- モバイルメニュー -->
+    <nav id="mobile-menu" class="nav__mobile" aria-label="モバイルナビゲーション">
+      <a href="#about" class="nav__mobile-link">制作の考え方</a>
+      <a href="#services" class="nav__mobile-link">サービス</a>
+      <a href="#works" class="nav__mobile-link">制作実績</a>
+      <a href="#process" class="nav__mobile-link">制作の流れ</a>
+      <a href="#contact" class="btn btn--primary btn--large btn--mt-sm">
+        まず相談してみる
+      </a>
+    </nav>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="hero__content">
+        <p class="hero__eyebrow">Web Creation Studio</p>
+
+        <h1 class="hero__headline">
+          「このお店、<em>好きだな</em>」と<br>
+          思わせるサイトを<br>
+          一緒につくります。
+        </h1>
+
+        <p class="hero__body">
+          テンプレートを埋めるだけの仕事はしません。
+          あなたのビジネスが12年続いてきた理由、
+          お客さんが遠くから来てくれる理由—
+          それをウェブサイトで正直に伝えます。
+        </p>
+
+        <div class="hero__actions">
+          <a href="#contact" class="btn btn--primary btn--large">まず話を聞いてもらう</a>
+          <a href="#works" class="btn btn--ghost btn--large">制作実績を見る</a>
+        </div>
+
+        <div class="hero__scroll-hint" aria-hidden="true">
+          <span class="hero__scroll-line"></span>
+          <span>SCROLL</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ABOUT / PHILOSOPHY -->
+    <section class="about section" id="about">
+      <div class="container">
+        <div class="about__grid">
+
+          <!-- ビジュアル -->
+          <div class="about__visual fade-right" aria-hidden="true">
+            <!-- SVGイラスト：デスクで作業する様子（人間的な手描き風） -->
+            <svg viewBox="0 0 400 300" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <!-- デスク -->
+              <rect x="40" y="200" width="320" height="8" rx="4" fill="#c4a882" />
+              <rect x="60" y="208" width="12" height="60" rx="3" fill="#b09070" />
+              <rect x="328" y="208" width="12" height="60" rx="3" fill="#b09070" />
+
+              <!-- PCモニター -->
+              <rect x="100" y="100" width="200" height="100" rx="8" fill="#2a2520" />
+              <rect x="108" y="108" width="184" height="76" rx="4" fill="#faf8f4" />
+              <rect x="180" y="200" width="40" height="8" rx="2" fill="#3a3530" />
+              <rect x="155" y="206" width="90" height="5" rx="2.5" fill="#3a3530" />
+
+              <!-- モニター画面のウェブページ風 -->
+              <rect x="116" y="116" width="80" height="8" rx="2" fill="#e8ddd0" />
+              <rect x="116" y="132" width="168" height="4" rx="2" fill="#d4c8bc" />
+              <rect x="116" y="142" width="120" height="4" rx="2" fill="#d4c8bc" />
+              <rect x="116" y="152" width="90" height="14" rx="4" fill="#8b5e3c" />
+              <rect x="116" y="174" width="40" height="4" rx="2" fill="#e0d4c8" />
+
+              <!-- コーヒーカップ -->
+              <ellipse cx="340" cy="184" rx="18" ry="6" fill="#c4a882" />
+              <rect x="322" y="160" width="36" height="24" rx="4" fill="#faf8f4" />
+              <ellipse cx="340" cy="160" rx="18" ry="6" fill="#e8ddd0" />
+              <path d="M358 170 Q368 170 368 178 Q368 186 358 186" stroke="#c4a882" stroke-width="2" fill="none" />
+              <!-- スチーム -->
+              <path d="M332 154 Q336 148 332 142" stroke="#c4a882" stroke-width="1.5" fill="none" stroke-linecap="round"
+                opacity="0.6" class="float-slow" />
+              <path d="M340 152 Q344 146 340 140" stroke="#c4a882" stroke-width="1.5" fill="none" stroke-linecap="round"
+                opacity="0.4" class="float-slow" />
+
+              <!-- 植物（小さい観葉植物） -->
+              <rect x="55" y="165" width="16" height="30" rx="3" fill="#6b8f6b" />
+              <ellipse cx="63" cy="162" rx="16" ry="14" fill="#4a6741" />
+              <ellipse cx="55" cy="168" rx="12" ry="10" fill="#5a7751" />
+              <ellipse cx="71" cy="170" rx="10" ry="9" fill="#3d5c36" />
+
+              <!-- ノート（メモ） -->
+              <rect x="100" y="185" width="60" height="15" rx="2" fill="#fff9f0" transform="rotate(-3 100 185)" />
+              <rect x="106" y="190" width="40" height="2" rx="1" fill="#d4c8bc" transform="rotate(-3 106 190)" />
+              <rect x="106" y="195" width="30" height="2" rx="1" fill="#d4c8bc" transform="rotate(-3 106 195)" />
+            </svg>
+
+            <!-- 実績バッジ（絶対配置） -->
+            <div class="hero-badge">
+              <div class="hero-badge__number">0円</div>
+              <div class="hero-badge__label">初回相談</div>
+            </div>
+          </div>
+
+          <!-- テキスト -->
+          <div class="about__text fade-left">
+            <p class="section-label">制作の考え方</p>
+            <h2 class="section-title">
+              「なんかいいな」を<br>言語化するのが仕事です
+            </h2>
+
+            <p class="section-body">
+              初めてお店のドアを開けたとき、なんとなく「ここ、好きだな」と思う瞬間ってありますよね。
+              その感覚は、照明の色だったり、店員さんの話し方だったり、壁に貼ってある写真だったり——
+              言葉にならない何かが重なって生まれるものです。
+            </p>
+            <p class="section-body">
+              ウェブサイトでも同じことができると思っています。
+              テンプレートに文字を入れただけのサイトではなく、
+              あなたのビジネスが12年続いてきた理由、お客さんが遠くから来てくれる理由を
+              ちゃんと伝えるサイトを一緒につくらせてください。
+            </p>
+
+            <div class="about__stats stagger">
+              <div class="stat-card">
+                <div class="stat-card__number">3日</div>
+                <div class="stat-card__label">初回ヒアリングから<br>デザイン提案まで</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-card__number">¥55k〜</div>
+                <div class="stat-card__label">小規模サイトの<br>制作費用（税込）</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-card__number">14日</div>
+                <div class="stat-card__label">標準的な<br>制作期間</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-card__number">無制限</div>
+                <div class="stat-card__label">相談・修正の<br>やりとり回数</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+      <div class="container">
+        <header class="section-header section-header--center fade-up">
+          <p class="section-label">Services</p>
+          <h2 class="section-title">できること</h2>
+          <p class="section-body">
+            小さな個人店から地域の会社まで、規模に関わらず丁寧に対応します。
+            「これで合ってるのかな」という不安があれば、まず話を聞かせてください。
+          </p>
+        </header>
+
+        <div class="services__grid stagger">
+
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <path d="M3 9h18M9 21V9" />
+              </svg>
+            </div>
+            <h3 class="service-card__title">ランディングページ（LP）</h3>
+            <p class="service-card__body">
+              1ページで商品・サービスの魅力を伝え、「問い合わせしたい」「買ってみたい」という気持ちに
+              つなげます。キャッチコピーから構成まで一緒に考えます。
+            </p>
+            <div class="service-card__price">¥33,000〜 / 7日〜</div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>
+            </div>
+            <h3 class="service-card__title">会社・店舗サイト</h3>
+            <p class="service-card__body">
+              トップページ・会社概要・サービス・お問い合わせなど、複数ページの構成で信頼感のあるサイトを。
+              スマートフォン対応はもちろん、Google マップ連携もお任せください。
+            </p>
+            <div class="service-card__price">¥88,000〜 / 14日〜</div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3" />
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14" />
+              </svg>
+            </div>
+            <h3 class="service-card__title">WordPress 対応</h3>
+            <p class="service-card__body">
+              「ブログを自分で更新したい」「お知らせを変えたい」というお客様に。
+              操作マニュアルも作成するので、ウェブが苦手な方でも安心して使えます。
+            </p>
+            <div class="service-card__price">¥165,000〜 / 21日〜</div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+            </div>
+            <h3 class="service-card__title">既存サイトの改善</h3>
+            <p class="service-card__body">
+              「今のサイトが古い」「スマホで見づらい」「問い合わせが来ない」——
+              部分的な改修でも対応します。全部作り直さなくていいケースも多いです。
+            </p>
+            <div class="service-card__price">¥22,000〜 / 要相談</div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+              </svg>
+            </div>
+            <h3 class="service-card__title">保守・更新サポート</h3>
+            <p class="service-card__body">
+              サイトを公開したあとも、テキストや写真の更新、セキュリティ対応などを
+              月額定額でサポートします。「ちょっと直したい」に素早く応えます。
+            </p>
+            <div class="service-card__price">¥11,000〜 / 月</div>
+          </article>
+
+          <article class="service-card service-card--cta">
+            <div class="service-card__icon service-card__icon--on-light" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+              </svg>
+            </div>
+            <h3 class="service-card__title">まずは無料相談から</h3>
+            <p class="service-card__body">
+              「何から始めればいいか分からない」「予算が合うか不安」—
+              そんな状態でも大丈夫。30分のオンライン相談は無料です。
+              いっしょに整理しましょう。
+            </p>
+            <a href="#contact" class="btn btn--primary btn--mt-sm">相談を申し込む</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- WORKS（制作実績） -->
+    <section class="works section" id="works">
+      <div class="container">
+        <header class="section-header section-header--center fade-up">
+          <p class="section-label">Works</p>
+          <h2 class="section-title">制作実績</h2>
+          <p class="section-body">
+            業種もサイズも違う、いくつかのプロジェクトをご紹介します。
+            共通しているのは「このお店・会社に頼みたい」と思われるサイトを目指したこと。
+          </p>
+        </header>
+
+        <div class="works__grid stagger">
+
+          <!-- デモ1: 美容室 haru. -->
+          <article class="work-card">
+            <div class="work-card__thumb">
+              <div class="work-card__preview">
+                <iframe src="demos/salon/" loading="lazy" title="haru. デモサイト"></iframe>
+              </div>
+              <a href="demos/salon/" target="_blank" rel="noopener" class="work-card__overlay">
+                <span class="work-overlay-btn">サイトを見る</span>
+              </a>
+            </div>
+            <div class="work-card__info">
+              <div class="work-card__tags">
+                <span class="tag">美容室</span>
+                <span class="tag">LP</span>
+                <span class="tag">予約フォーム</span>
+              </div>
+              <h3 class="work-card__title">haru. 様（美容室・大阪）</h3>
+              <p class="work-card__desc">
+                「あなたの"似合う"を一緒に見つけます」をコンセプトに、
+                柔らかい配色とイラストで親しみやすさを表現。
+                予約導線をファーストビューに配置し、来店のハードルを下げるデザインに。
+              </p>
+            </div>
+          </article>
+
+          <!-- デモ2: 飲食店 炉端すずき -->
+          <article class="work-card">
+            <div class="work-card__thumb">
+              <div class="work-card__preview">
+                <iframe src="demos/restaurant/" loading="lazy" title="炉端すずき デモサイト"></iframe>
+              </div>
+              <a href="demos/restaurant/" target="_blank" rel="noopener" class="work-card__overlay">
+                <span class="work-overlay-btn">サイトを見る</span>
+              </a>
+            </div>
+            <div class="work-card__info">
+              <div class="work-card__tags">
+                <span class="tag">飲食店</span>
+                <span class="tag">炭火焼き</span>
+                <span class="tag">予約導線</span>
+              </div>
+              <h3 class="work-card__title">炉端 すずき 様（渋谷）</h3>
+              <p class="work-card__desc">
+                炭の温もりと夜の雰囲気を伝える暗めのトーンに、
+                ゆらめく光のアニメーションで臨場感を演出。
+                「一度行ってみたい」と思わせる、お店の空気が伝わるサイトに。
+              </p>
+            </div>
+          </article>
+
+          <!-- デモ3: 行政書士事務所 -->
+          <article class="work-card">
+            <div class="work-card__thumb">
+              <div class="work-card__preview">
+                <iframe src="demos/professional/" loading="lazy" title="みなと行政書士事務所 デモサイト"></iframe>
+              </div>
+              <a href="demos/professional/" target="_blank" rel="noopener" class="work-card__overlay">
+                <span class="work-overlay-btn">サイトを見る</span>
+              </a>
+            </div>
+            <div class="work-card__info">
+              <div class="work-card__tags">
+                <span class="tag">士業</span>
+                <span class="tag">コーポレート</span>
+                <span class="tag">信頼設計</span>
+              </div>
+              <h3 class="work-card__title">みなと行政書士事務所 様（横浜）</h3>
+              <p class="work-card__desc">
+                「硬くなりすぎず、でも信頼感もほしい」という難しいオーダーに。
+                元・市役所職員という強みを前面に出し、実績数や許可率で安心感を。
+                無料相談への導線を複数配置した構成に。
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- PROCESS（制作の流れ） -->
+    <section class="section" id="process">
+      <div class="container">
+        <header class="section-header section-header--center fade-up">
+          <p class="section-label">Process</p>
+          <h2 class="section-title">制作の流れ</h2>
+          <p class="section-body">
+            はじめてウェブサイトを作る方でも、途中で「これ大丈夫かな」と不安にならないように、
+            毎ステップで確認しながら進めます。
+          </p>
+        </header>
+
+        <div class="process__steps stagger">
+
+          <div class="step">
+            <div class="step__number">01</div>
+            <h3 class="step__title">ヒアリング</h3>
+            <p class="step__body">
+              ZoomまたはLINEで30〜60分。「どんな人に来てほしいか」「今困っていること」を
+              一緒に整理します。この段階で費用の目安もお伝えします。
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step__number">02</div>
+            <h3 class="step__title">デザイン提案</h3>
+            <p class="step__body">
+              3日以内にデザイン案をお見せします。「もう少し落ち着いた感じに」「写真を増やしたい」——
+              修正は何度でもOK。納得するまで続けます。
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step__number">03</div>
+            <h3 class="step__title">コーディング</h3>
+            <p class="step__body">
+              デザインが決まったらHTML/CSSで実装。スマートフォン・タブレット・PCすべての
+              表示を確認しながら進めます。途中経過もいつでも見ていただけます。
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step__number">04</div>
+            <h3 class="step__title">公開・サポート</h3>
+            <p class="step__body">
+              公開後も1ヶ月間は無料でサポート。「ここを直したい」「文字を変えたい」などの
+              ご要望に対応します。その後は月額プランでの継続も可能です。
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact section" id="contact">
+      <div class="container">
+        <div class="contact__inner">
+
+          <!-- テキスト側 -->
+          <div class="fade-right">
+            <p class="section-label">Contact</p>
+            <h2 class="section-title">
+              まず話を聞かせてください
+            </h2>
+            <p class="section-body">
+              「相談するとお金がかかりそう」「まだ何も決まっていない」——
+              そんな状態でも気軽に連絡してください。はじめの相談は無料です。
+            </p>
+
+            <div class="contact-info">
+              <div class="contact-item">
+                <div class="contact-item__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="contact-item__label">RESPONSE TIME</div>
+                  <div class="contact-item__value">通常24時間以内にご返信</div>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-item__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.36 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.27 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.11a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="contact-item__label">MEETING</div>
+                  <div class="contact-item__value">Zoom / LINE / 対面（関西圏）</div>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-item__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="contact-item__label">AVAILABILITY</div>
+                  <div class="contact-item__value">月〜土 10:00〜18:00</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- フォーム側 -->
+          <div class="fade-left">
+            <form class="contact-form" data-form-endpoint="https://formspree.io/f/mdalvlnd" novalidate>
+              <div class="form-group">
+                <label class="form-label" for="name">
+                  お名前（屋号でも可）<span class="required" aria-label="必須">*</span>
+                </label>
+                <input type="text" id="name" name="name" class="form-input" placeholder="山田 太郎 / やまだ整体院" required
+                  autocomplete="name">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="email">
+                  メールアドレス<span class="required" aria-label="必須">*</span>
+                </label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="hello@example.com" required
+                  autocomplete="email">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="budget">ご予算のめど</label>
+                <select id="budget" name="budget" class="form-input">
+                  <option value="" disabled selected>選択してください（目安で大丈夫です）</option>
+                  <option value="under50k">〜5万円</option>
+                  <option value="50k-100k">5〜10万円</option>
+                  <option value="100k-200k">10〜20万円</option>
+                  <option value="over200k">20万円〜</option>
+                  <option value="unknown">まだわからない</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="message">
+                  お問い合わせ内容<span class="required" aria-label="必須">*</span>
+                </label>
+                <textarea id="message" name="message" class="form-input"
+                  placeholder="「今のサイトが古い気がする」「はじめてサイトを作りたい」など、どんな状況でも大丈夫です。" required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn--primary btn--large btn--full">
+                送信する（無料）
+              </button>
+
+              <p class="form-reply-note">
+                送信後24時間以内にご返信します。返信がない場合は迷惑メールフォルダをご確認ください。
+              </p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">
+        &copy; 2026 ATELIER WEB. All rights reserved.
+      </p>
+      <nav class="footer__links" aria-label="フッターナビゲーション">
+        <a href="#about" class="footer__link">制作の考え方</a>
+        <a href="#services" class="footer__link">サービス</a>
+        <a href="#works" class="footer__link">制作実績</a>
+        <a href="#process" class="footer__link">制作の流れ</a>
+        <a href="#contact" class="footer__link">お問い合わせ</a>
+      </nav>
     </div>
-  </div>
-  <div class="card">
-    <iframe src="pour-over-cafe.html" scrolling="no"></iframe>
-    <div class="card-body">
-      <h2>Pour Over Café</h2>
-      <p>カフェ・飲食店向け WordPressテーマ。温かみのある世界観とメニュー導線。</p>
-      <a href="pour-over-cafe.html">詳細を見る →</a>
-    </div>
-  </div>
-  <div class="card">
-    <iframe src="lexis-law.html" scrolling="no"></iframe>
-    <div class="card-body">
-      <h2>Lexis Law</h2>
-      <p>士業・法律事務所向け WordPressテーマ。信頼感と問い合わせ導線を重視。</p>
-      <a href="lexis-law.html">詳細を見る →</a>
-    </div>
-  </div>
-</div>
+  </footer>
+
+  <script src="js/main.js" type="module" defer></script>
 </body>
+
 </html>

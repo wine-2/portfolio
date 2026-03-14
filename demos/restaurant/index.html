@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>炉端 すずき | 渋谷の炭火焼き</title>
+  <meta name="description" content="渋谷にある小さな炉端焼き屋。炭火の香りと、毎朝仕込む一品で、あなたの夜を温めます。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ナビゲーション -->
+  <header class="nav-header" id="nav-header">
+    <nav class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="nav-logo-jp">炉端 すずき</span>
+        <span class="nav-logo-en">Robata Suzuki</span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#menu" class="nav-link">メニュー</a></li>
+        <li><a href="#info" class="nav-link">店舗情報</a></li>
+        <li><a href="#reserve" class="nav-link nav-link-cta">ご予約</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ヒーロー -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <!-- 炭火のSVGイラスト -->
+      <svg class="hero-embers" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- 暗い背景のグラデーション -->
+        <defs>
+          <radialGradient id="fireGlow" cx="50%" cy="70%" r="60%">
+            <stop offset="0%" stop-color="#c4872a" stop-opacity="0.35"/>
+            <stop offset="40%" stop-color="#8b4513" stop-opacity="0.2"/>
+            <stop offset="100%" stop-color="#1a1510" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="emberGlow1" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#e8a040" stop-opacity="0.9"/>
+            <stop offset="100%" stop-color="#c4872a" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="emberGlow2" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#ff6b35" stop-opacity="0.8"/>
+            <stop offset="100%" stop-color="#8b3a00" stop-opacity="0"/>
+          </radialGradient>
+          <filter id="blur-sm">
+            <feGaussianBlur stdDeviation="3"/>
+          </filter>
+          <filter id="blur-md">
+            <feGaussianBlur stdDeviation="8"/>
+          </filter>
+          <filter id="blur-lg">
+            <feGaussianBlur stdDeviation="20"/>
+          </filter>
+        </defs>
+        <!-- 全体のグロー -->
+        <rect width="800" height="600" fill="url(#fireGlow)"/>
+        <!-- 木炭の輪郭 -->
+        <g opacity="0.6">
+          <ellipse cx="280" cy="500" rx="90" ry="22" fill="#2a1f15"/>
+          <ellipse cx="420" cy="510" rx="75" ry="18" fill="#231a10"/>
+          <ellipse cx="540" cy="495" rx="85" ry="20" fill="#2a1f15"/>
+          <ellipse cx="350" cy="518" rx="60" ry="14" fill="#1e1610"/>
+        </g>
+        <!-- 炭火のグロー（下から） -->
+        <ellipse cx="390" cy="520" rx="200" ry="60" fill="#c4872a" opacity="0.15" filter="url(#blur-lg)"/>
+        <ellipse cx="390" cy="510" rx="120" ry="35" fill="#e8a040" opacity="0.2" filter="url(#blur-md)"/>
+        <!-- 小さな火の粒 -->
+        <g class="ember-float">
+          <circle cx="310" cy="440" r="3" fill="url(#emberGlow1)" opacity="0.8" filter="url(#blur-sm)"/>
+          <circle cx="370" cy="400" r="2" fill="url(#emberGlow2)" opacity="0.7"/>
+          <circle cx="430" cy="420" r="2.5" fill="url(#emberGlow1)" opacity="0.6" filter="url(#blur-sm)"/>
+          <circle cx="290" cy="380" r="1.5" fill="#ff8c42" opacity="0.9"/>
+          <circle cx="480" cy="390" r="2" fill="url(#emberGlow2)" opacity="0.8"/>
+          <circle cx="340" cy="350" r="1.5" fill="#e8a040" opacity="0.7" filter="url(#blur-sm)"/>
+          <circle cx="410" cy="360" r="3" fill="url(#emberGlow1)" opacity="0.5"/>
+          <circle cx="460" cy="330" r="1.5" fill="#ff6b35" opacity="0.6"/>
+          <circle cx="320" cy="310" r="2" fill="#e8a040" opacity="0.4" filter="url(#blur-sm)"/>
+          <circle cx="390" cy="280" r="1.5" fill="#c4872a" opacity="0.5"/>
+        </g>
+        <!-- 煙のような薄いライン -->
+        <path d="M350 490 Q360 450 340 400 Q320 350 345 300" stroke="#c4872a" stroke-width="1.5" fill="none" opacity="0.15" filter="url(#blur-sm)"/>
+        <path d="M420 495 Q415 455 435 405 Q455 355 430 310" stroke="#c4872a" stroke-width="1.5" fill="none" opacity="0.12" filter="url(#blur-sm)"/>
+        <path d="M390 500 Q395 460 385 415 Q375 370 395 320 Q415 270 400 230" stroke="#c4872a" stroke-width="2" fill="none" opacity="0.1" filter="url(#blur-md)"/>
+        <!-- 木目テクスチャの暗示 -->
+        <line x1="0" y1="598" x2="800" y2="598" stroke="#3d2d1a" stroke-width="4"/>
+        <line x1="100" y1="596" x2="700" y2="598" stroke="#2a1f10" stroke-width="6" opacity="0.5"/>
+      </svg>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">渋谷 · 炭火焼き</p>
+      <h1 class="hero-title">
+        <span class="hero-title-jp">炉端 すずき</span>
+        <span class="hero-title-en">Robata Suzuki</span>
+      </h1>
+      <p class="hero-subtitle">炭の前に座れば、時間の流れが変わる気がします。</p>
+      <a href="#reserve" class="hero-cta">席を予約する</a>
+    </div>
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- コンセプト -->
+  <section class="concept" id="concept">
+    <div class="container">
+      <div class="concept-inner">
+        <div class="concept-visual" aria-hidden="true">
+          <svg viewBox="0 0 320 400" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="conceptGlow" cx="50%" cy="75%" r="55%">
+                <stop offset="0%" stop-color="#c4872a" stop-opacity="0.4"/>
+                <stop offset="100%" stop-color="#1a1510" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <!-- 焼き台のシルエット -->
+            <rect x="60" y="280" width="200" height="12" rx="3" fill="#3d2d1a"/>
+            <rect x="80" y="270" width="160" height="12" rx="2" fill="#2a1f15"/>
+            <!-- 炭 -->
+            <ellipse cx="120" cy="268" rx="28" ry="10" fill="#1e1610"/>
+            <ellipse cx="160" cy="272" rx="24" ry="8" fill="#231810"/>
+            <ellipse cx="200" cy="266" rx="26" ry="9" fill="#1e1610"/>
+            <!-- 炎のグロー -->
+            <ellipse cx="160" cy="265" rx="80" ry="30" fill="url(#conceptGlow)"/>
+            <!-- 串焼きの棒 -->
+            <g stroke="#8b6914" stroke-width="2.5" stroke-linecap="round">
+              <line x1="105" y1="180" x2="105" y2="268"/>
+              <line x1="135" y1="170" x2="135" y2="268"/>
+              <line x1="165" y1="175" x2="165" y2="268"/>
+              <line x1="195" y1="168" x2="195" y2="268"/>
+              <line x1="225" y1="178" x2="225" y2="268"/>
+            </g>
+            <!-- 食材（シンプルな形） -->
+            <ellipse cx="105" cy="200" rx="14" ry="12" fill="#c4872a" opacity="0.85"/>
+            <ellipse cx="105" cy="222" rx="12" ry="10" fill="#a06820" opacity="0.7"/>
+            <ellipse cx="135" cy="192" rx="13" ry="11" fill="#d4944a" opacity="0.8"/>
+            <ellipse cx="135" cy="214" rx="11" ry="10" fill="#b07828" opacity="0.7"/>
+            <ellipse cx="165" cy="196" rx="14" ry="12" fill="#c4872a" opacity="0.85"/>
+            <ellipse cx="165" cy="218" rx="12" ry="10" fill="#a06820" opacity="0.7"/>
+            <ellipse cx="195" cy="190" rx="13" ry="12" fill="#d4944a" opacity="0.8"/>
+            <ellipse cx="195" cy="212" rx="12" ry="10" fill="#b07828" opacity="0.7"/>
+            <ellipse cx="225" cy="198" rx="14" ry="11" fill="#c4872a" opacity="0.85"/>
+            <ellipse cx="225" cy="220" rx="11" ry="9" fill="#a06820" opacity="0.7"/>
+            <!-- 小さな火の粒 -->
+            <circle cx="118" cy="240" r="2.5" fill="#ff8c42" opacity="0.7"/>
+            <circle cx="155" cy="235" r="2" fill="#e8a040" opacity="0.8"/>
+            <circle cx="190" cy="242" r="2.5" fill="#ff6b35" opacity="0.6"/>
+            <circle cx="210" cy="232" r="1.5" fill="#e8a040" opacity="0.9"/>
+            <!-- 上部のテキスト装飾 -->
+            <text x="160" y="80" text-anchor="middle" font-family="serif" font-size="13" fill="#c4872a" opacity="0.4" letter-spacing="4">— 十七年 —</text>
+            <text x="160" y="110" text-anchor="middle" font-family="serif" font-size="11" fill="#c4872a" opacity="0.3" letter-spacing="2">毎朝の仕込み</text>
+          </svg>
+        </div>
+        <div class="concept-text">
+          <span class="section-label">炭火へのこだわり</span>
+          <h2 class="section-title">なぜ炭火なのか</h2>
+          <div class="concept-body">
+            <p>
+              「ガスでいいじゃないか」と言われるたびに、少し笑ってしまいます。炭火と向き合って17年。毎朝5時半に店に入って火を起こすのは、義務ではなく習慣です。炭が落ち着くまでのあの30分が、一日の中でいちばん頭が静かになる時間なんです。
+            </p>
+            <p>
+              仕入れ先の漁師・田中さんとのつき合いは15年になります。今日の魚を何にするかは、今朝の電話で決める。「今日はカマスが跳ねてるぞ」と聞いたら、その日のメニューが変わります。仕込みすぎず、余らせず。その日の分だけ、丁寧に。
+            </p>
+            <p>
+              炭火は素材に正直です。ごまかしが効かない。だから毎朝、仕込みに時間をかける。臭みのある魚は使わない。火の入れ方を間違えた肉は出さない。それだけのことを、ただ続けているだけです。いつか飽きるかと思いましたが、17年経っても飽きないんですよ、炭火には。
+            </p>
+          </div>
+          <div class="concept-sig">
+            <span class="concept-sig-name">店主　鈴木 誠一</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- メニュー -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">本日のおすすめ</span>
+        <h2 class="section-title">お品書き</h2>
+        <p class="section-note">仕入れにより内容が変わります。お電話でご確認いただけます。</p>
+      </div>
+
+      <!-- 炉端焼き -->
+      <div class="menu-category">
+        <h3 class="menu-category-title">
+          <span class="menu-category-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2 C12 2 8 7 8 11 C8 13.2 9.8 15 12 15 C14.2 15 16 13.2 16 11 C16 7 12 2 12 2Z" fill="#c4872a" opacity="0.8"/>
+              <path d="M12 7 C12 7 10 9.5 10 11 C10 12.1 10.9 13 12 13 C13.1 13 14 12.1 14 11 C14 9.5 12 7 12 7Z" fill="#ff8c42" opacity="0.9"/>
+              <line x1="4" y1="19" x2="20" y2="19" stroke="#c4872a" stroke-width="1.5"/>
+              <line x1="6" y1="22" x2="18" y2="22" stroke="#8b6914" stroke-width="1"/>
+            </svg>
+          </span>
+          炉端焼き
+        </h3>
+        <div class="menu-grid">
+          <div class="menu-item">
+            <div class="menu-item-visual" aria-hidden="true">
+              <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <radialGradient id="g1" cx="50%" cy="60%" r="50%">
+                    <stop offset="0%" stop-color="#c4872a"/>
+                    <stop offset="100%" stop-color="#6b3d10"/>
+                  </radialGradient>
+                </defs>
+                <ellipse cx="40" cy="50" rx="30" ry="14" fill="#2a1f15" opacity="0.5"/>
+                <rect x="38" y="15" width="3" height="42" rx="1.5" fill="#8b6914"/>
+                <ellipse cx="40" cy="26" rx="14" ry="12" fill="url(#g1)"/>
+                <ellipse cx="40" cy="42" rx="13" ry="11" fill="url(#g1)" opacity="0.85"/>
+                <ellipse cx="40" cy="26" rx="8" ry="4" fill="#e8a040" opacity="0.4"/>
+              </svg>
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <h4 class="menu-item-name">本日のお魚一本焼き</h4>
+                <span class="menu-item-price">¥980〜</span>
+              </div>
+              <p class="menu-item-desc">朝に田中さんから仕入れた魚を、塩だけで焼きます。今日の魚は今朝決まります。</p>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-item-visual" aria-hidden="true">
+              <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <radialGradient id="g2" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#d4944a"/>
+                    <stop offset="100%" stop-color="#7a3d0a"/>
+                  </radialGradient>
+                </defs>
+                <ellipse cx="40" cy="52" rx="28" ry="12" fill="#2a1f15" opacity="0.4"/>
+                <!-- 鶏の串 -->
+                <line x1="20" y1="16" x2="60" y2="56" stroke="#8b6914" stroke-width="3" stroke-linecap="round"/>
+                <circle cx="28" cy="24" r="10" fill="url(#g2)"/>
+                <circle cx="40" cy="36" r="10" fill="url(#g2)" opacity="0.9"/>
+                <circle cx="52" cy="48" r="9" fill="url(#g2)" opacity="0.85"/>
+                <circle cx="28" cy="24" r="5" fill="#e8a040" opacity="0.3"/>
+              </svg>
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <h4 class="menu-item-name">地鶏もも串（2本）</h4>
+                <span class="menu-item-price">¥680</span>
+              </div>
+              <p class="menu-item-desc">岩手の地鶏を使用。塩か醤油ダレか、焼いてから決めてもらえます。</p>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-item-visual" aria-hidden="true">
+              <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <radialGradient id="g3" cx="50%" cy="40%" r="55%">
+                    <stop offset="0%" stop-color="#e8b870"/>
+                    <stop offset="100%" stop-color="#7a5010"/>
+                  </radialGradient>
+                </defs>
+                <ellipse cx="40" cy="58" rx="32" ry="10" fill="#2a1f15" opacity="0.3"/>
+                <!-- ホタテ -->
+                <ellipse cx="40" cy="42" rx="26" ry="18" fill="#3d2a18"/>
+                <ellipse cx="40" cy="38" rx="22" ry="16" fill="url(#g3)"/>
+                <ellipse cx="40" cy="36" rx="14" ry="10" fill="#f0d090" opacity="0.6"/>
+                <ellipse cx="40" cy="35" rx="8" ry="6" fill="#ffe4a0" opacity="0.8"/>
+                <!-- バターのとろみ -->
+                <ellipse cx="44" cy="33" rx="6" ry="3" fill="#ffec8b" opacity="0.5"/>
+              </svg>
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <h4 class="menu-item-name">北海道産 帆立バター焼き</h4>
+                <span class="menu-item-price">¥1,100</span>
+              </div>
+              <p class="menu-item-desc">殻のまま炭火で。バターと醤油が香ばしく混ざる瞬間、隣のお客さんも振り向きます。</p>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-item-visual" aria-hidden="true">
+              <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <radialGradient id="g4" cx="40%" cy="40%" r="55%">
+                    <stop offset="0%" stop-color="#c4872a"/>
+                    <stop offset="100%" stop-color="#5a2d0a"/>
+                  </radialGradient>
+                </defs>
+                <ellipse cx="40" cy="55" rx="30" ry="10" fill="#2a1f15" opacity="0.3"/>
+                <!-- 野菜の串 -->
+                <line x1="40" y1="12" x2="40" y2="62" stroke="#6b4010" stroke-width="2.5" stroke-linecap="round"/>
+                <!-- ピーマン -->
+                <ellipse cx="40" cy="22" rx="10" ry="8" fill="#3d6b20" opacity="0.9"/>
+                <!-- 玉ねぎ -->
+                <ellipse cx="40" cy="36" rx="11" ry="9" fill="#d4944a" opacity="0.85"/>
+                <ellipse cx="40" cy="35" rx="7" ry="6" fill="#e8b870" opacity="0.5"/>
+                <!-- しいたけ -->
+                <ellipse cx="40" cy="50" rx="12" ry="7" fill="#5a3d20"/>
+                <ellipse cx="40" cy="48" rx="10" ry="5" fill="#7a5530"/>
+              </svg>
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <h4 class="menu-item-name">旬野菜の炭火焼き</h4>
+                <span class="menu-item-price">¥580</span>
+              </div>
+              <p class="menu-item-desc">今日の野菜は今日の市場で決まります。炭で焼くと甘みが全然違う、とよく言われます。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 旬の一品 -->
+      <div class="menu-category">
+        <h3 class="menu-category-title">
+          <span class="menu-category-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="9" stroke="#c4872a" stroke-width="1.5" fill="none"/>
+              <path d="M12 7 L12 12 L15 15" stroke="#c4872a" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="12" cy="12" r="1.5" fill="#c4872a"/>
+            </svg>
+          </span>
+          旬の一品
+        </h3>
+        <div class="menu-grid">
+          <div class="menu-item">
+            <div class="menu-item-visual" aria-hidden="true">
+              <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <radialGradient id="g5" cx="50%" cy="40%" r="55%">
+                    <stop offset="0%" stop-color="#f0f0e0"/>
+                    <stop offset="100%" stop-color="#c8b88a"/>
+                  </radialGradient>
+                </defs>
+                <ellipse cx="40" cy="58" rx="30" ry="8" fill="#2a1f15" opacity="0.3"/>
+                <!-- 器 -->
+                <path d="M14 50 Q14 62 40 62 Q66 62 66 50 L62 36 Q56 30 40 30 Q24 30 18 36 Z" fill="#3d2a18"/>
+                <path d="M16 48 Q16 58 40 58 Q64 58 64 48 L60 36 Q54 32 40 32 Q26 32 20 36 Z" fill="#2a1c10"/>
+                <!-- だし -->
+                <ellipse cx="40" cy="44" rx="22" ry="10" fill="#c8a878" opacity="0.3"/>
+                <!-- 食材 -->
+                <ellipse cx="35" cy="42" rx="10" ry="8" fill="url(#g5)"/>
+                <ellipse cx="50" cy="40" rx="8" ry="7" fill="#e8d8b0" opacity="0.8"/>
+                <circle cx="30" cy="38" r="4" fill="#7a9030" opacity="0.7"/>
+              </svg>
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <h4 class="menu-item-name">豆腐の田楽みそ</h4>
+                <span class="menu-item-price">¥480</span>
+              </div>
+              <p class="menu-item-desc">自家製の西京みそを使った田楽。仕込みに2日かけます。ご飯のお供に、お酒のお供に。</p>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-item-visual" aria-hidden="true">
+              <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <radialGradient id="g6" cx="50%" cy="45%" r="55%">
+                    <stop offset="0%" stop-color="#d0e8f0"/>
+                    <stop offset="100%" stop-color="#8ab0c0"/>
+                  </radialGradient>
+                </defs>
+                <!-- 皿 -->
+                <ellipse cx="40" cy="56" rx="32" ry="10" fill="#3d2a18"/>
+                <ellipse cx="40" cy="52" rx="28" ry="8" fill="#2a1c10"/>
+                <!-- 刺身 -->
+                <rect x="20" y="38" width="20" height="12" rx="3" fill="url(#g6)" transform="rotate(-8 30 44)"/>
+                <rect x="30" y="36" width="20" height="12" rx="3" fill="#c0d8e0" opacity="0.9" transform="rotate(-4 40 42)"/>
+                <rect x="40" y="37" width="20" height="12" rx="3" fill="url(#g6)" opacity="0.85" transform="rotate(2 50 43)"/>
+                <!-- わさび -->
+                <ellipse cx="56" cy="50" rx="6" ry="4" fill="#5a8030" opacity="0.8"/>
+              </svg>
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <h4 class="menu-item-name">本日の刺身（三点盛り）</h4>
+                <span class="menu-item-price">¥1,380</span>
+              </div>
+              <p class="menu-item-desc">田中さんの今朝の水揚げから、脂ののったものを三種。醤油は地醤油をご用意しています。</p>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-item-visual" aria-hidden="true">
+              <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <radialGradient id="g7" cx="50%" cy="40%" r="55%">
+                    <stop offset="0%" stop-color="#e0c890"/>
+                    <stop offset="100%" stop-color="#8b6010"/>
+                  </radialGradient>
+                </defs>
+                <!-- 土鍋 -->
+                <ellipse cx="40" cy="58" rx="30" ry="10" fill="#5a3d20"/>
+                <path d="M12 52 Q12 66 40 66 Q68 66 68 52 L65 35 Q58 28 40 28 Q22 28 15 35 Z" fill="#3d2a18"/>
+                <ellipse cx="40" cy="35" rx="26" ry="10" fill="#2a1c10"/>
+                <!-- 蓋 -->
+                <ellipse cx="40" cy="32" rx="25" ry="9" fill="#4a3220"/>
+                <ellipse cx="40" cy="30" rx="22" ry="7" fill="#3d2810"/>
+                <ellipse cx="40" cy="28" rx="6" ry="4" fill="#5a3d20"/>
+                <!-- 湯気 -->
+                <path d="M30 20 Q28 15 31 10" stroke="#f5ede0" stroke-width="1.5" fill="none" opacity="0.2" stroke-linecap="round"/>
+                <path d="M40 18 Q38 13 41 8" stroke="#f5ede0" stroke-width="1.5" fill="none" opacity="0.15" stroke-linecap="round"/>
+                <path d="M50 20 Q48 15 51 10" stroke="#f5ede0" stroke-width="1.5" fill="none" opacity="0.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <h4 class="menu-item-name">炭火焼きと根菜の小鍋</h4>
+                <span class="menu-item-price">¥780</span>
+              </div>
+              <p class="menu-item-desc">寒い夜だけ出す一品。大根と里芋を昆布だしで炊いて、焼いた鶏を加えます。身体が温まります。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 飲み物 -->
+      <div class="menu-category">
+        <h3 class="menu-category-title">
+          <span class="menu-category-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 3 L17 3 L15 15 Q14.5 18 12 18 Q9.5 18 9 15 Z" stroke="#c4872a" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+              <line x1="12" y1="18" x2="12" y2="21" stroke="#c4872a" stroke-width="1.5"/>
+              <line x1="8" y1="21" x2="16" y2="21" stroke="#c4872a" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="7" y1="7" x2="17" y2="7" stroke="#c4872a" stroke-width="1" opacity="0.5"/>
+            </svg>
+          </span>
+          飲み物
+        </h3>
+        <div class="menu-grid">
+          <div class="menu-item">
+            <div class="menu-item-visual" aria-hidden="true">
+              <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="beerGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#f0d060"/>
+                    <stop offset="100%" stop-color="#c4a030"/>
+                  </linearGradient>
+                </defs>
+                <!-- ジョッキ -->
+                <path d="M22 22 L24 65 L56 65 L58 22 Z" fill="#3d2a18" stroke="#5a4030" stroke-width="1"/>
+                <path d="M24 22 L26 62 L54 62 L56 22 Z" fill="url(#beerGrad)" opacity="0.85"/>
+                <!-- 泡 -->
+                <ellipse cx="40" cy="24" rx="16" ry="6" fill="#f8f0d0" opacity="0.9"/>
+                <circle cx="34" cy="22" r="4" fill="white" opacity="0.7"/>
+                <circle cx="44" cy="21" r="5" fill="white" opacity="0.6"/>
+                <circle cx="40" cy="20" r="3.5" fill="white" opacity="0.8"/>
+                <!-- ハンドル -->
+                <path d="M56 30 Q68 30 68 40 Q68 50 56 50" stroke="#5a4030" stroke-width="4" fill="none" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <h4 class="menu-item-name">生ビール（中）</h4>
+                <span class="menu-item-price">¥580</span>
+              </div>
+              <p class="menu-item-desc">サッポロ黒ラベル。炉端には、やっぱりこれが一番合います。</p>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-item-visual" aria-hidden="true">
+              <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="sakeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#f5f0e8"/>
+                    <stop offset="100%" stop-color="#e0d8c8"/>
+                  </linearGradient>
+                </defs>
+                <!-- 徳利 -->
+                <path d="M30 18 Q30 14 40 14 Q50 14 50 18 L52 28 Q56 32 56 40 Q56 58 40 60 Q24 58 24 40 Q24 32 28 28 Z" fill="#e8e0d0" opacity="0.15" stroke="#c4872a" stroke-width="1"/>
+                <path d="M32 20 Q32 16 40 16 Q48 16 48 20 L50 28 Q54 32 54 40 Q54 56 40 58 Q26 56 26 40 Q26 32 30 28 Z" fill="url(#sakeGrad)" opacity="0.2"/>
+                <!-- お猪口 -->
+                <path d="M30 66 Q30 72 40 72 Q50 72 50 66 L48 60 L32 60 Z" fill="#e8e0d0" opacity="0.3" stroke="#c4872a" stroke-width="1"/>
+                <path d="M32 65 Q32 70 40 70 Q48 70 48 65 L46 61 L34 61 Z" fill="url(#sakeGrad)" opacity="0.15"/>
+                <!-- 酒のライン -->
+                <line x1="28" y1="46" x2="52" y2="46" stroke="white" stroke-width="0.5" opacity="0.2"/>
+              </svg>
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <h4 class="menu-item-name">地酒（一合）</h4>
+                <span class="menu-item-price">¥680〜</span>
+              </div>
+              <p class="menu-item-desc">岩手・新潟・島根から月替わりで3〜4種を仕入れています。燗でも冷でも。迷ったら聞いてください。</p>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-item-visual" aria-hidden="true">
+              <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="wineGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#c04060"/>
+                    <stop offset="100%" stop-color="#601020"/>
+                  </linearGradient>
+                </defs>
+                <!-- ワイングラス -->
+                <path d="M28 18 Q24 36 32 48 Q36 54 40 54 Q44 54 48 48 Q56 36 52 18 Z" fill="#3a1a10" stroke="#c4872a" stroke-width="1" opacity="0.8"/>
+                <path d="M30 20 Q26 36 33 47 Q36.5 52 40 52 Q43.5 52 47 47 Q54 36 50 20 Z" fill="url(#wineGrad)" opacity="0.6"/>
+                <!-- 液面 -->
+                <ellipse cx="40" cy="38" rx="12" ry="4" fill="#c04060" opacity="0.3"/>
+                <!-- ステム -->
+                <line x1="40" y1="54" x2="40" y2="68" stroke="#c4872a" stroke-width="2"/>
+                <!-- ベース -->
+                <ellipse cx="40" cy="68" rx="14" ry="4" fill="#3d2a18"/>
+                <ellipse cx="40" cy="67" rx="12" ry="3" fill="#2a1c10"/>
+              </svg>
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <h4 class="menu-item-name">自然派ワイン（グラス）</h4>
+                <span class="menu-item-price">¥780〜</span>
+              </div>
+              <p class="menu-item-desc">炭火の香りに合う、少し素朴なナチュールワインを中心に。赤・白・オレンジ、気分で選んでください。</p>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-item-visual" aria-hidden="true">
+              <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="teaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#8ab878"/>
+                    <stop offset="100%" stop-color="#5a8040"/>
+                  </linearGradient>
+                </defs>
+                <!-- 急須 -->
+                <ellipse cx="42" cy="44" rx="22" ry="20" fill="#3d2a18"/>
+                <ellipse cx="42" cy="42" rx="20" ry="18" fill="#2a1c10"/>
+                <!-- 注ぎ口 -->
+                <path d="M62 38 Q72 34 70 44 Q68 50 62 46" fill="#3d2a18" stroke="#5a3d20" stroke-width="1"/>
+                <!-- 持ち手 -->
+                <path d="M20 36 Q10 36 10 44 Q10 52 20 52" stroke="#5a3d20" stroke-width="4" fill="none" stroke-linecap="round"/>
+                <!-- 蓋 -->
+                <ellipse cx="42" cy="26" rx="14" ry="5" fill="#4a3220"/>
+                <ellipse cx="42" cy="24" rx="5" ry="3" fill="#5a4030"/>
+                <!-- お茶の水面 -->
+                <ellipse cx="42" cy="34" rx="16" ry="6" fill="url(#teaGrad)" opacity="0.25"/>
+                <!-- 湯気 -->
+                <path d="M38 18 Q36 13 39 9" stroke="#f5ede0" stroke-width="1.5" fill="none" opacity="0.15" stroke-linecap="round"/>
+                <path d="M46 17 Q44 12 47 8" stroke="#f5ede0" stroke-width="1.5" fill="none" opacity="0.12" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="menu-item-info">
+              <div class="menu-item-header">
+                <h4 class="menu-item-name">煎茶（静岡 川根）</h4>
+                <span class="menu-item-price">¥380</span>
+              </div>
+              <p class="menu-item-desc">お酒を飲まない方にも、ゆっくりしていただきたい。急須でゆっくり淹れます。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 店舗情報 -->
+  <section class="info-section" id="info">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">アクセス</span>
+        <h2 class="section-title">店舗情報</h2>
+      </div>
+      <div class="info-inner">
+        <div class="info-details">
+          <dl class="info-list">
+            <div class="info-row">
+              <dt class="info-label">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="9" cy="7" r="3" stroke="#c4872a" stroke-width="1.5" fill="none"/>
+                  <path d="M9 2 C5.7 2 3 4.7 3 8 C3 12.5 9 17 9 17 C9 17 15 12.5 15 8 C15 4.7 12.3 2 9 2Z" stroke="#c4872a" stroke-width="1.5" fill="none"/>
+                </svg>
+                住所
+              </dt>
+              <dd class="info-value">
+                〒150-0043<br/>
+                東京都渋谷区道玄坂2丁目10-12<br/>
+                道玄坂ビル B1F
+              </dd>
+            </div>
+            <div class="info-row">
+              <dt class="info-label">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="9" cy="9" r="7" stroke="#c4872a" stroke-width="1.5" fill="none"/>
+                  <path d="M9 5 L9 9 L12 11" stroke="#c4872a" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                営業時間
+              </dt>
+              <dd class="info-value">
+                月〜金：17:00〜24:00（L.O. 23:00）<br/>
+                土・日：16:00〜23:30（L.O. 22:30）<br/>
+                <span class="info-note">定休日：月曜日（祝日の場合は翌日）</span>
+              </dd>
+            </div>
+            <div class="info-row">
+              <dt class="info-label">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M4 3 Q3 3 3 5 Q3 14 14 15 Q16 15 16 14 L16 12 Q16 11 14.5 11 L12.5 11 Q12 11 11.5 11.5 Q10.5 12.5 10 12.5 Q7 12.5 5.5 11 Q4 9.5 4 6.5 Q4 6 4.5 5.5 L5.5 4.5 Q6 4 6 3.5 L6 1.5 Q6 1 5 1 Z" stroke="#c4872a" stroke-width="1.5" fill="none"/>
+                </svg>
+                電話
+              </dt>
+              <dd class="info-value">
+                <a href="tel:03-5456-8823" class="info-link">03-5456-8823</a>
+              </dd>
+            </div>
+            <div class="info-row">
+              <dt class="info-label">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <rect x="2" y="4" width="14" height="10" rx="1.5" stroke="#c4872a" stroke-width="1.5" fill="none"/>
+                  <polyline points="2,5 9,10 16,5" stroke="#c4872a" stroke-width="1.5" fill="none"/>
+                </svg>
+                最寄り駅
+              </dt>
+              <dd class="info-value">
+                渋谷駅（各線）徒歩7分<br/>
+                道玄坂を上り、左手の路地へ。<br/>
+                <span class="info-note">夜は赤い提灯が目印です。</span>
+              </dd>
+            </div>
+            <div class="info-row">
+              <dt class="info-label">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <rect x="2" y="2" width="14" height="14" rx="2" stroke="#c4872a" stroke-width="1.5" fill="none"/>
+                  <line x1="6" y1="7" x2="12" y2="7" stroke="#c4872a" stroke-width="1.2"/>
+                  <line x1="6" y1="10" x2="10" y2="10" stroke="#c4872a" stroke-width="1.2"/>
+                </svg>
+                席数
+              </dt>
+              <dd class="info-value">
+                カウンター席 8席 / テーブル 2卓（各4名）<br/>
+                <span class="info-note">予約優先。お一人様も大歓迎です。</span>
+              </dd>
+            </div>
+          </dl>
+        </div>
+        <div class="info-map">
+          <!-- 地図のSVGプレースホルダー -->
+          <div class="map-placeholder">
+            <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" aria-label="店舗周辺地図（イメージ）">
+              <rect width="400" height="300" fill="#1e1810"/>
+              <!-- 道路 -->
+              <line x1="0" y1="150" x2="400" y2="150" stroke="#3d3020" stroke-width="28"/>
+              <line x1="0" y1="150" x2="400" y2="150" stroke="#2a2218" stroke-width="24"/>
+              <!-- センターライン -->
+              <line x1="0" y1="150" x2="400" y2="150" stroke="#c4872a" stroke-width="1" stroke-dasharray="20,15" opacity="0.3"/>
+              <!-- 縦の道 -->
+              <line x1="200" y1="0" x2="200" y2="300" stroke="#3d3020" stroke-width="20"/>
+              <line x1="200" y1="0" x2="200" y2="300" stroke="#2a2218" stroke-width="16"/>
+              <line x1="200" y1="0" x2="200" y2="300" stroke="#c4872a" stroke-width="0.8" stroke-dasharray="15,12" opacity="0.25"/>
+              <!-- 斜め道（道玄坂イメージ） -->
+              <line x1="0" y1="200" x2="280" y2="40" stroke="#3d3020" stroke-width="22"/>
+              <line x1="0" y1="200" x2="280" y2="40" stroke="#2a2218" stroke-width="18"/>
+              <!-- 建物ブロック -->
+              <rect x="50" y="30" width="100" height="80" rx="3" fill="#2a2010" stroke="#3d3020" stroke-width="1"/>
+              <rect x="220" y="30" width="80" height="60" rx="3" fill="#2a2010" stroke="#3d3020" stroke-width="1"/>
+              <rect x="300" y="30" width="80" height="90" rx="3" fill="#2a2010" stroke="#3d3020" stroke-width="1"/>
+              <rect x="50" y="200" width="110" height="80" rx="3" fill="#2a2010" stroke="#3d3020" stroke-width="1"/>
+              <rect x="220" y="200" width="90" height="80" rx="3" fill="#2a2010" stroke="#3d3020" stroke-width="1"/>
+              <rect x="320" y="200" width="70" height="80" rx="3" fill="#2a2010" stroke="#3d3020" stroke-width="1"/>
+              <!-- 渋谷駅マーク -->
+              <rect x="30" y="120" width="60" height="36" rx="3" fill="#3d2a18" stroke="#c4872a" stroke-width="1.5"/>
+              <text x="60" y="134" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#c4872a">渋谷駅</text>
+              <text x="60" y="148" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#c4872a" opacity="0.7">各線</text>
+              <!-- 店舗マーク -->
+              <circle cx="290" cy="125" r="14" fill="#c4872a" opacity="0.9"/>
+              <circle cx="290" cy="125" r="10" fill="#1a1510"/>
+              <text x="290" y="129" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#c4872a" font-weight="bold">炉</text>
+              <!-- パルス -->
+              <circle cx="290" cy="125" r="20" fill="none" stroke="#c4872a" stroke-width="1.5" opacity="0.4">
+                <animate attributeName="r" values="14;24;14" dur="2.5s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0.6;0;0.6" dur="2.5s" repeatCount="indefinite"/>
+              </circle>
+              <!-- 徒歩ルートの点線 -->
+              <line x1="90" y1="138" x2="272" y2="125" stroke="#c4872a" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.5"/>
+              <!-- 徒歩7分ラベル -->
+              <rect x="155" y="108" width="56" height="18" rx="3" fill="#1a1510" opacity="0.85"/>
+              <text x="183" y="121" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#c4872a">徒歩7分</text>
+            </svg>
+            <p class="map-note">
+              渋谷駅（各線）徒歩7分。道玄坂を上り左の路地、赤い提灯が目印。<br/>
+              <a href="https://maps.google.com" target="_blank" rel="noopener" class="map-link">Google マップで開く →</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ご予約 -->
+  <section class="reserve-section" id="reserve">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">お席の確保</span>
+        <h2 class="section-title">ご予約</h2>
+        <p class="section-note">
+          お電話でも承っております。<a href="tel:03-5456-8823" class="section-note-link">03-5456-8823</a>
+        </p>
+      </div>
+      <div class="reserve-inner">
+        <div class="reserve-note-box">
+          <p>当店はカウンター8席、テーブル2卓の小さなお店です。お席をご用意するためにも、なるべく事前のご予約をお願いしています。お一人様のご予約も、もちろん大歓迎です。</p>
+        </div>
+        <form class="reserve-form" id="reserve-form" novalidate>
+          <div class="form-row form-row-2">
+            <div class="form-group">
+              <label for="reserve-name" class="form-label">お名前 <span class="form-required">必須</span></label>
+              <input
+                type="text"
+                id="reserve-name"
+                name="name"
+                class="form-input"
+                placeholder="鈴木 誠一"
+                autocomplete="name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="reserve-phone" class="form-label">電話番号 <span class="form-required">必須</span></label>
+              <input
+                type="tel"
+                id="reserve-phone"
+                name="phone"
+                class="form-input"
+                placeholder="090-0000-0000"
+                autocomplete="tel"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-row form-row-3">
+            <div class="form-group">
+              <label for="reserve-date" class="form-label">ご来店日 <span class="form-required">必須</span></label>
+              <input
+                type="date"
+                id="reserve-date"
+                name="date"
+                class="form-input"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="reserve-time" class="form-label">ご希望時間 <span class="form-required">必須</span></label>
+              <select id="reserve-time" name="time" class="form-select" required>
+                <option value="" disabled selected>時間を選ぶ</option>
+                <option value="17:00">17:00</option>
+                <option value="17:30">17:30</option>
+                <option value="18:00">18:00</option>
+                <option value="18:30">18:30</option>
+                <option value="19:00">19:00</option>
+                <option value="19:30">19:30</option>
+                <option value="20:00">20:00</option>
+                <option value="20:30">20:30</option>
+                <option value="21:00">21:00</option>
+                <option value="21:30">21:30</option>
+                <option value="22:00">22:00</option>
+                <option value="22:30">22:30</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="reserve-count" class="form-label">人数 <span class="form-required">必須</span></label>
+              <select id="reserve-count" name="count" class="form-select" required>
+                <option value="" disabled selected>人数を選ぶ</option>
+                <option value="1">1名</option>
+                <option value="2">2名</option>
+                <option value="3">3名</option>
+                <option value="4">4名</option>
+                <option value="5+">5名以上（要相談）</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="reserve-message" class="form-label">ご要望・アレルギーなど</label>
+            <textarea
+              id="reserve-message"
+              name="message"
+              class="form-textarea"
+              rows="4"
+              placeholder="アレルギー・記念日のご利用・その他ご要望がございましたらお書きください。"
+            ></textarea>
+          </div>
+          <div class="form-submit">
+            <button type="submit" class="form-btn">予約リクエストを送る</button>
+            <p class="form-disclaimer">ご確認のお電話を1〜2営業日以内に差し上げます。</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <p class="footer-logo">炉端 すずき</p>
+          <p class="footer-tagline">炭の前で、ゆっくりしていってください。</p>
+        </div>
+        <div class="footer-links-group">
+          <nav class="footer-nav" aria-label="フッターナビゲーション">
+            <a href="#menu" class="footer-link">メニュー</a>
+            <a href="#info" class="footer-link">店舗情報</a>
+            <a href="#reserve" class="footer-link">ご予約</a>
+          </nav>
+          <div class="footer-contact">
+            <a href="tel:03-5456-8823" class="footer-tel">03-5456-8823</a>
+            <p class="footer-address">東京都渋谷区道玄坂2丁目10-12 B1F</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 炉端 すずき. All rights reserved.</p>
+        <p class="footer-hours-note">月〜金 17:00〜24:00 / 土日 16:00〜23:30 / 月曜定休</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
