@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FLEUR SALON | 女性専用ヘアサロン — 東京・代官山</title>
+  <meta name="description" content="東京・代官山の女性専用ヘアサロン FLEUR SALON（フルール サロン）。ナチュラルカラーとトリートメントを得意とする、居心地のよい小さなアトリエです。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="site-header" id="site-header">
+    <nav class="nav-inner">
+      <a href="#top" class="nav-logo" aria-label="FLEUR SALONホームへ">
+        <span class="logo-en">FLEUR SALON</span>
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="#concept" class="nav-link">concept</a></li>
+        <li><a href="#menu" class="nav-link">menu</a></li>
+        <li><a href="#stylist" class="nav-link">stylist</a></li>
+        <li><a href="#access" class="nav-link">access</a></li>
+        <li><a href="#reserve" class="nav-link nav-link--reserve">reserve</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" aria-label="メインビジュアル">
+      <div class="hero-bg" aria-hidden="true">
+        <!-- Decorative botanical SVG -->
+        <svg class="hero-botanical" viewBox="0 0 600 700" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Stem -->
+          <path d="M300 680 Q295 500 310 320 Q320 200 280 80" stroke="#A8B5A2" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+          <!-- Leaves left -->
+          <path d="M295 400 Q230 360 220 300 Q270 330 295 400Z" fill="#A8B5A2" opacity="0.2"/>
+          <path d="M308 520 Q240 480 225 410 Q275 445 308 520Z" fill="#A8B5A2" opacity="0.15"/>
+          <!-- Leaves right -->
+          <path d="M305 350 Q375 310 390 250 Q340 285 305 350Z" fill="#A8B5A2" opacity="0.2"/>
+          <path d="M310 470 Q385 430 395 365 Q345 405 310 470Z" fill="#A8B5A2" opacity="0.15"/>
+          <!-- Flower top -->
+          <ellipse cx="278" cy="70" rx="18" ry="28" fill="#C9A99A" opacity="0.3" transform="rotate(-15, 278, 70)"/>
+          <ellipse cx="298" cy="62" rx="16" ry="26" fill="#E8C4B8" opacity="0.35" transform="rotate(5, 298, 62)"/>
+          <ellipse cx="316" cy="72" rx="15" ry="25" fill="#C9A99A" opacity="0.25" transform="rotate(20, 316, 72)"/>
+          <circle cx="297" cy="80" r="10" fill="#C9B07A" opacity="0.3"/>
+          <!-- Small accent dots -->
+          <circle cx="100" cy="200" r="30" fill="#E8C4B8" opacity="0.1"/>
+          <circle cx="490" cy="450" r="50" fill="#A8B5A2" opacity="0.08"/>
+          <circle cx="520" cy="150" r="20" fill="#C9A99A" opacity="0.12"/>
+        </svg>
+      </div>
+
+      <div class="hero-content">
+        <p class="hero-eyebrow">Hair Salon — Natural &amp; Comfortable</p>
+        <h1 class="hero-title">FLEUR SALON</h1>
+        <p class="hero-subtitle">心地よい時間を、あなたのために</p>
+        <div class="hero-cta">
+          <a href="#reserve" class="btn btn-primary">ご予約はこちら</a>
+          <a href="#menu" class="btn btn-outline">メニューを見る</a>
+        </div>
+      </div>
+
+      <div class="hero-scroll" aria-hidden="true">
+        <span class="scroll-line"></span>
+        <span class="scroll-label">scroll</span>
+      </div>
+    </section>
+
+    <!-- ===== CONCEPT ===== -->
+    <section class="section" id="concept">
+      <div class="container">
+        <div class="concept-grid">
+          <div class="concept-text fade-in">
+            <span class="section-label">Concept</span>
+            <h2 class="section-title">「来てよかった」と感じる、<br />上質な時間</h2>
+            <div class="section-line"></div>
+            <p class="body-text">
+              自然光の差し込む落ち着いた空間で、お客様一人ひとりと向き合います。丁寧なカウンセリングから始まり、施術後のホームケアまで、トータルで美しさをサポートします。
+            </p>
+            <p class="body-text">
+              流行を取り入れながらも、お客様の個性や生活スタイルに合わせたスタイルをご提案。「また来たい」と思っていただけるサロンを目指しています。
+            </p>
+          </div>
+          <div class="concept-visual fade-in" aria-hidden="true">
+            <svg viewBox="0 0 360 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Salon interior illustration -->
+              <rect x="40" y="40" width="280" height="340" rx="4" fill="#F5F2EC"/>
+              <!-- Window frame -->
+              <rect x="80" y="70" width="100" height="120" rx="2" fill="none" stroke="#E5E0D8" stroke-width="2"/>
+              <line x1="130" y1="70" x2="130" y2="190" stroke="#E5E0D8" stroke-width="1"/>
+              <line x1="80" y1="130" x2="180" y2="130" stroke="#E5E0D8" stroke-width="1"/>
+              <!-- Light rays -->
+              <line x1="130" y1="190" x2="100" y2="280" stroke="#C9B07A" stroke-width="1" opacity="0.3"/>
+              <line x1="130" y1="190" x2="130" y2="290" stroke="#C9B07A" stroke-width="1" opacity="0.25"/>
+              <line x1="130" y1="190" x2="160" y2="280" stroke="#C9B07A" stroke-width="1" opacity="0.3"/>
+              <!-- Mirror -->
+              <rect x="200" y="65" width="100" height="140" rx="50" fill="none" stroke="#C9A99A" stroke-width="2"/>
+              <rect x="215" y="80" width="70" height="110" rx="35" fill="#FAFAF7" opacity="0.6"/>
+              <!-- Chair silhouette -->
+              <rect x="100" y="280" width="60" height="60" rx="4" fill="#D4DDD0" opacity="0.6"/>
+              <rect x="110" y="260" width="40" height="30" rx="4" fill="#A8B5A2" opacity="0.5"/>
+              <rect x="105" y="335" width="8" height="25" rx="2" fill="#A8B5A2" opacity="0.4"/>
+              <rect x="147" y="335" width="8" height="25" rx="2" fill="#A8B5A2" opacity="0.4"/>
+              <!-- Flowers on counter -->
+              <rect x="220" y="280" width="80" height="8" rx="2" fill="#E5E0D8"/>
+              <circle cx="240" cy="275" r="8" fill="#C9A99A" opacity="0.5"/>
+              <circle cx="255" cy="272" r="6" fill="#E8C4B8" opacity="0.6"/>
+              <circle cx="268" cy="276" r="7" fill="#C9A99A" opacity="0.4"/>
+              <line x1="240" y1="283" x2="240" y2="295" stroke="#A8B5A2" stroke-width="1.5"/>
+              <line x1="255" y1="278" x2="255" y2="295" stroke="#A8B5A2" stroke-width="1.5"/>
+              <line x1="268" y1="283" x2="268" y2="295" stroke="#A8B5A2" stroke-width="1.5"/>
+              <!-- Accent circle -->
+              <circle cx="48" cy="48" r="30" fill="#C9A99A" opacity="0.08"/>
+              <circle cx="312" cy="372" r="40" fill="#A8B5A2" opacity="0.08"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MENU ===== -->
+    <section class="section section--linen" id="menu">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Menu &amp; Price</span>
+          <h2 class="section-title">メニュー・料金</h2>
+          <div class="section-line section-line--center"></div>
+        </div>
+
+        <div class="menu-grid fade-in">
+          <div class="menu-card">
+            <h3 class="menu-category">カット</h3>
+            <ul class="menu-list" role="list">
+              <li class="menu-item"><span class="menu-name">カット</span><span class="menu-price">¥6,600</span></li>
+              <li class="menu-item"><span class="menu-name">カット + シャンプー</span><span class="menu-price">¥7,700</span></li>
+              <li class="menu-item"><span class="menu-name">前髪カット</span><span class="menu-price">¥1,650</span></li>
+            </ul>
+          </div>
+          <div class="menu-card">
+            <h3 class="menu-category">カラー</h3>
+            <ul class="menu-list" role="list">
+              <li class="menu-item"><span class="menu-name">全体カラー</span><span class="menu-price">¥9,900〜</span></li>
+              <li class="menu-item"><span class="menu-name">リタッチカラー</span><span class="menu-price">¥7,700〜</span></li>
+              <li class="menu-item"><span class="menu-name">ハイライト</span><span class="menu-price">¥13,200〜</span></li>
+            </ul>
+          </div>
+          <div class="menu-card">
+            <h3 class="menu-category">トリートメント</h3>
+            <ul class="menu-list" role="list">
+              <li class="menu-item"><span class="menu-name">ベーシック</span><span class="menu-price">¥3,300</span></li>
+              <li class="menu-item"><span class="menu-name">プレミアム</span><span class="menu-price">¥5,500</span></li>
+              <li class="menu-item"><span class="menu-name">スパ＋トリートメント</span><span class="menu-price">¥8,800</span></li>
+            </ul>
+          </div>
+          <div class="menu-card">
+            <h3 class="menu-category">パーマ</h3>
+            <ul class="menu-list" role="list">
+              <li class="menu-item"><span class="menu-name">デジタルパーマ</span><span class="menu-price">¥14,300〜</span></li>
+              <li class="menu-item"><span class="menu-name">コールドパーマ</span><span class="menu-price">¥10,450〜</span></li>
+              <li class="menu-item"><span class="menu-name">縮毛矯正</span><span class="menu-price">¥16,500〜</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="menu-note fade-in">※ 表示価格はすべて税込みです。髪の長さ・状態により料金が変わる場合があります。</p>
+      </div>
+    </section>
+
+    <!-- ===== STYLIST ===== -->
+    <section class="section" id="stylist">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Our Stylist</span>
+          <h2 class="section-title">スタイリスト紹介</h2>
+          <div class="section-line section-line--center"></div>
+        </div>
+
+        <div class="stylist-grid fade-in">
+          <article class="stylist-card">
+            <div class="stylist-avatar" aria-hidden="true">
+              <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="60" cy="60" r="58" fill="#F5F2EC" stroke="#E8C4B8" stroke-width="2"/>
+                <ellipse cx="60" cy="50" rx="22" ry="25" fill="#E8C4B8" opacity="0.8"/>
+                <path d="M38 75 Q38 55 60 52 Q82 55 82 75" fill="#E8C4B8" opacity="0.5"/>
+                <!-- Hair -->
+                <path d="M38 48 Q38 25 60 22 Q82 25 82 48 Q75 35 60 33 Q45 35 38 48Z" fill="#C9A99A" opacity="0.6"/>
+              </svg>
+            </div>
+            <h3 class="stylist-name">佐藤 みのり</h3>
+            <p class="stylist-role">オーナースタイリスト</p>
+            <p class="stylist-bio">カラーリストとして10年のキャリア。「その人らしい」ナチュラルカラーが得意。丁寧なカウンセリングで理想のスタイルを一緒に見つけます。</p>
+          </article>
+          <article class="stylist-card">
+            <div class="stylist-avatar" aria-hidden="true">
+              <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="60" cy="60" r="58" fill="#F5F2EC" stroke="#A8B5A2" stroke-width="2"/>
+                <ellipse cx="60" cy="50" rx="22" ry="25" fill="#D4DDD0" opacity="0.8"/>
+                <path d="M38 75 Q38 55 60 52 Q82 55 82 75" fill="#D4DDD0" opacity="0.5"/>
+                <path d="M38 48 Q38 25 60 22 Q82 25 82 48 Q75 35 60 33 Q45 35 38 48Z" fill="#A8B5A2" opacity="0.5"/>
+              </svg>
+            </div>
+            <h3 class="stylist-name">田中 えり</h3>
+            <p class="stylist-role">スタイリスト</p>
+            <p class="stylist-bio">パーマ・トリートメントのスペシャリスト。髪のダメージを最小限に抑えながら、理想の質感へ。繰り返しても傷まないケア施術を提案します。</p>
+          </article>
+          <article class="stylist-card">
+            <div class="stylist-avatar" aria-hidden="true">
+              <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="60" cy="60" r="58" fill="#F5F2EC" stroke="#C9B07A" stroke-width="2"/>
+                <ellipse cx="60" cy="50" rx="22" ry="25" fill="#E8D4B8" opacity="0.8"/>
+                <path d="M38 75 Q38 55 60 52 Q82 55 82 75" fill="#E8D4B8" opacity="0.5"/>
+                <path d="M38 48 Q38 25 60 22 Q82 25 82 48 Q75 35 60 33 Q45 35 38 48Z" fill="#C9B07A" opacity="0.4"/>
+              </svg>
+            </div>
+            <h3 class="stylist-name">山田 るか</h3>
+            <p class="stylist-role">スタイリスト</p>
+            <p class="stylist-bio">トレンドとベーシックを組み合わせたスタイル作りが得意。「毎朝セットが楽になった」というお声をたくさんいただいています。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GALLERY ===== -->
+    <section class="section section--linen" id="gallery">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Gallery</span>
+          <h2 class="section-title">スタイルギャラリー</h2>
+          <div class="section-line section-line--center"></div>
+        </div>
+        <div class="gallery-grid fade-in" aria-label="施術例ギャラリー">
+          <div class="gallery-item gallery-item--large" aria-label="ナチュラルブラウンカラー"></div>
+          <div class="gallery-item" aria-label="ゆるふわパーマ"></div>
+          <div class="gallery-item" aria-label="ハイライトカラー"></div>
+          <div class="gallery-item" aria-label="ストレートスタイル"></div>
+          <div class="gallery-item" aria-label="ショートボブ"></div>
+          <div class="gallery-item" aria-label="縮毛矯正"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ACCESS ===== -->
+    <section class="section" id="access">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Access &amp; Info</span>
+          <h2 class="section-title">アクセス・店舗情報</h2>
+          <div class="section-line section-line--center"></div>
+        </div>
+        <div class="access-grid fade-in">
+          <div class="access-map" aria-label="地図">
+            <svg viewBox="0 0 400 280" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="代官山周辺地図">
+              <rect width="400" height="280" fill="#F5F2EC"/>
+              <!-- Streets -->
+              <rect x="0" y="100" width="400" height="16" fill="#E5E0D8"/>
+              <rect x="0" y="180" width="400" height="12" fill="#E5E0D8"/>
+              <rect x="130" y="0" width="14" height="280" fill="#E5E0D8"/>
+              <rect x="250" y="0" width="10" height="280" fill="#E5E0D8"/>
+              <!-- Blocks -->
+              <rect x="20" y="130" width="96" height="36" rx="2" fill="#D4DDD0" opacity="0.5"/>
+              <rect x="158" y="130" width="76" height="36" rx="2" fill="#D4DDD0" opacity="0.5"/>
+              <rect x="20" y="50" width="96" height="36" rx="2" fill="#D4DDD0" opacity="0.4"/>
+              <rect x="158" y="50" width="76" height="36" rx="2" fill="#D4DDD0" opacity="0.4"/>
+              <rect x="274" y="50" width="106" height="36" rx="2" fill="#D4DDD0" opacity="0.4"/>
+              <rect x="274" y="130" width="106" height="36" rx="2" fill="#D4DDD0" opacity="0.5"/>
+              <rect x="20" y="200" width="200" height="60" rx="2" fill="#D4DDD0" opacity="0.4"/>
+              <rect x="274" y="200" width="106" height="60" rx="2" fill="#D4DDD0" opacity="0.4"/>
+              <!-- Salon marker -->
+              <circle cx="200" cy="108" r="14" fill="#C9A99A"/>
+              <circle cx="200" cy="108" r="8" fill="white"/>
+              <circle cx="200" cy="108" r="4" fill="#C9A99A"/>
+              <!-- Pin shadow -->
+              <ellipse cx="200" cy="120" rx="8" ry="3" fill="#2C2825" opacity="0.1"/>
+              <!-- Label -->
+              <rect x="158" y="72" width="84" height="20" rx="4" fill="white" opacity="0.9"/>
+              <text x="200" y="86" font-family="Noto Sans JP, sans-serif" font-size="9" fill="#2C2825" text-anchor="middle" font-weight="500">FLEUR SALON</text>
+            </svg>
+          </div>
+          <div class="access-info">
+            <dl class="info-list">
+              <div class="info-row">
+                <dt>住所</dt>
+                <dd>東京都渋谷区代官山町XX-XX<br /><span class="info-sub">代官山駅 徒歩3分</span></dd>
+              </div>
+              <div class="info-row">
+                <dt>営業時間</dt>
+                <dd>10:00〜19:00（最終受付 18:00）</dd>
+              </div>
+              <div class="info-row">
+                <dt>定休日</dt>
+                <dd>毎週火曜日・第3月曜日</dd>
+              </div>
+              <div class="info-row">
+                <dt>TEL</dt>
+                <dd>03-XXXX-XXXX</dd>
+              </div>
+              <div class="info-row">
+                <dt>席数</dt>
+                <dd>セット席 6席（完全予約制）</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== RESERVATION ===== -->
+    <section class="section section--rose" id="reserve">
+      <div class="container">
+        <div class="reserve-inner fade-in">
+          <span class="section-label section-label--light">Reservation</span>
+          <h2 class="section-title section-title--light">ご予約</h2>
+          <p class="reserve-text">ご来店前に、お気軽にご連絡ください。<br />初めての方もお待ちしております。</p>
+          <div class="reserve-buttons">
+            <a href="tel:03-XXXX-XXXX" class="btn btn-reserve-primary">電話で予約する</a>
+            <a href="#contact" class="btn btn-reserve-outline">LINEで予約する</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <p class="footer-logo">FLEUR SALON</p>
+        <p class="footer-address">東京都渋谷区代官山町XX-XX</p>
+      </div>
+      <nav class="footer-nav" aria-label="フッターナビゲーション">
+        <ul role="list">
+          <li><a href="#concept">concept</a></li>
+          <li><a href="#menu">menu</a></li>
+          <li><a href="#stylist">stylist</a></li>
+          <li><a href="#access">access</a></li>
+          <li><a href="#reserve">reserve</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="footer-copy"><small>© 2026 FLEUR SALON. All rights reserved.</small></p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
